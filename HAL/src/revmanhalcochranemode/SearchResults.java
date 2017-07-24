@@ -19,9 +19,6 @@ import org.w3c.dom.NodeList;
 import java.text.DateFormat; 
 import java.text.SimpleDateFormat; 
 import java.util.Date; 
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -199,10 +196,6 @@ public class SearchResults
               
           return true;
 	  } catch (Exception ex) {
-            final JOptionPane pane = new JOptionPane("There was an error in 'results of search'.");
-            final JDialog d = pane.createDialog(null, "ERROR");
-            d.setLocation(450, 430);
-            d.setVisible(true);
               ex.printStackTrace();
 		return false;
 	  }
@@ -362,12 +355,8 @@ public class SearchResults
               
           return true;
 	  } catch (Exception ex) {
-             ex.printStackTrace();
-            final JOptionPane pane = new JOptionPane("There was an error in 'results of search'.");
-            final JDialog d = pane.createDialog(null, "ERROR");
-            d.setLocation(450, 430);
-            d.setVisible(true);
-            return false;
+              ex.printStackTrace();
+		return false;
 	  }
     }
         

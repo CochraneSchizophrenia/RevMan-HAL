@@ -1,0 +1,532 @@
+﻿----Background----
+
+----Description of the condition----
+PP YOUR OWN TEXT - SEE EXAMPLE PROTOCOL AND COCHRANE HANDBOOK (
+II
+BP click on book symbol top right of this page)
+
+----Description of the intervention----
+PP YOUR OWN TEXT - SEE EXAMPLE PROTOCOL AND COCHRANE HANDBOOK
+
+----How the intervention might work---- 
+PP YOUR OWN TEXT - SEE EXAMPLE PROTOCOL AND COCHRANE HANDBOOK
+
+----Why it is important to do this review---- 
+PP YOUR OWN TEXT - SEE EXAMPLE PROTOCOL AND COCHRANE HANDBOOK
+
+----Objectives---- 
+PP SEE EXAMPLE PROTOCOL
+
+----Methods----
+
+----Criteria for considering studies for this review----
+ 
+----Types of studies---- 
+PP All relevant randomised controlled trials. If a trial is described as 'double blind' but implies randomisation, we will include such trials in a sensitivity analysis ( see Sensitivity analysis). If their inclusion does not result in a substantive difference, they will remain in the analyses. If their inclusion does result in important clinically significant but not necessarily statistically significant differences, we will not add the data from these lower quality studies to the results of the better trials, but will present such data within a subcategory. We will exclude quasi-randomised studies, such as those allocating by alternate days of the week. Where people are given additional treatments within INSERT YOUR INTERVENTION, we will only include data if the adjunct treatment is evenly distributed between groups and it is only the INSERT YOUR INTERVENTION that is randomised.
+
+----Types of participants---- 
+PP Adults, however defined, with schizophrenia or related disorders, including schizophreniform disorder, schizoaffective disorder and delusional disorder, again, by any means of diagnosis. PLEASE NOTE YOU MAY NEED TO ADAPT THIS SENTENCE SO IT IS RELEVANT TO YOUR REVIEW - 
+II for example if your review has a title with serious mental illness you need to state that you will include trials with a 'mix' of diagnosis but not ones where schizophrenia is not the majority.
+PP We are interested in making sure that information is as relevant to the current care of people with schizophrenia as possible so propose to clearly highlight the current clinical state (acute, early post-acute, partial remission, remission) as well as the stage (prodromal, first episode, early illness, persistent) and as to whether the studies primarily focused on people with particular problems (for example, negative symptoms, treatment-resistant illnesses).
+
+----Types of interventions---- 
+H4 1. YOUR INTERVENTION TITLE
+PP YOUR OWN TEXT
+H4 2. YOUR CONTROL TITLE/S
+PP YOUR OWN TEXT
+
+----Types of outcome measures---- 
+PP All outcomes will be divided into short term (less than 6 months), medium term (7-12 months) and long term (over 1 year). PLEASE NOTE YOU MAY NEED TO ADAPT THIS SENTENCE SO IT IS RELEVANT TO YOUR REVIEW
+
+----Primary outcomes---- 
+H5 1. YOUR PRIMARY OUTCOME TITLE - specify time points of interest
+PP SEE EXAMPLE PROTOCOL - FOLLOW OUR LAYOUT
+
+----Secondary outcomes----
+H5 1. YOUR SECONDARY OUTCOMES TITLE
+PP SEE EXAMPLE PROTOCOL - FOLLOW OUR LAYOUT
+H5 X. Summary of findings table
+PP We will use the GRADE approach to interpret findings (
+LR Schünemann 2008
+PS ) and will use GRADE profiler (
+LI GRADEPRO: http://www.ims.cochrane.org/revman/gradepro
+PS ) to import data from RevMan 5 (
+LI Review Manager: http://www.ims.cochrane.org/revman
+PS ) to create 'Summary of findings' tables. These tables provide outcome-specific information concerning the overall quality of evidence from each included study in the comparison, the magnitude of effect of the interventions examined, and the sum of available data on all outcomes we rated as important to patient-care and decision making. We aim to select the following main outcomes for inclusion in the Summary of findings table:
+H6 LIST YOUR 7 MAIN OUTCOMES OF INTEREST YOU WOULD LIKE TO PUT IN A SUMMARY OF FINDINGS TABLE
+PP 1.
+PP 2.
+PP 3.
+PP 4.
+PP 5.
+PP 6.
+PP 7.
+
+----Search methods for identification of studies----
+
+----Electronic searches----
+PP LEAVE BLANK FOR OUR TSC TO COMPLETE - FARHAD WILL CONTACT YOU TO DISCUSS ONCE YOU HAVE SUBMITTED PROTOCOL FOR EDITING
+
+----Searching other resources---- 
+H4 1. Reference searching
+PP We will inspect references of all included studies for further relevant studies.
+H4 2. Personal contact
+PP We will contact the first author of each included study for information regarding unpublished trials. We will note the outcome of this contact in the included or awaiting assessment studies tables.
+
+----Data collection and analysis----
+
+----Selection of studies---- 
+PP INSERT THE INITIALS OF THE REVIEWERS WHO WILL BE SELECTING STUDIES will independently inspect citations from the searches and identify relevant abstracts. A random 20% sample will be independently re-inspected by INSERT INITIALS OF REVIEWERS WHO WILL BE ENSURING RELIABILITY to ensure reliability. Where disputes arise, the full report will be acquired for more detailed scrutiny. Full reports of the abstracts meeting the review criteria will be obtained and inspected by INSERT RELEVANT INTIIALS. Again, a random 20% of reports will be re-inspected by INSERT RELEVANT INTIIALS. in order to ensure reliable selection. Where it is not possible to resolve disagreement by discussion, we will attempt to contact the authors of the study for clarification.
+
+----Data extraction and management---- 
+H4 1. Extraction
+PP Review authors INSERT RELEVANT INTIIALS will extract data from all included studies. In addition, to ensure reliability, INSERT RELEVANT INTIIALS will independently extract data from a random sample of these studies, comprising 10% of the total. Again, any disagreement will be discussed, decisions documented and, if necessary, authors of studies will be contacted for clarification. With remaining problems INSERT RELEVANT INTIIALS will help clarify issues and these final decisions will be documented. Data presented only in graphs and figures will be extracted whenever possible, but included only if two reviewers independently have the same result. We will attempt to contact authors through an open-ended request in order to obtain missing information or for clarification whenever necessary. If studies are multi-centre, where possible, we will extract data relevant to each component centre separately.
+H4 2. Management
+H5 2.1 Forms
+PP We will extract data onto standard, simple forms.
+H5 2.2 Scale-derived data
+PP We will include continuous data from rating scales only if:
+BR
+BR a) the psychometric properties of the measuring instrument have been described in a peer-reviewed journal (
+LR Marshall 2000
+SP ); and
+BR 
+BR b) the measuring instrument has not been written or modified by one of the trialists for that particular trial.
+SP Ideally the measuring instrument should either be i. a self-report or ii. completed by an independent rater or relative (not the therapist). We realise that this is not often reported clearly, in Description of studies we will note if this is the case or not.
+H5 2.3 Endpoint versus change data
+PP There are advantages of both endpoint and change data. Change data can remove a component of between-person variability from the analysis. On the other hand calculation of change needs two assessments (baseline and endpoint) which can be difficult in unstable and difficult to measure conditions such as schizophrenia. We have decided to primarily use endpoint data, and only use change data if the former are not available. Endpoint and change data will be combined in the analysis as we will use weighted mean differences (MD) rather than standardised mean differences throughout (
+LR Higgins 2011
+SP ).
+H5 2.4 Skewed data
+PP Continuous data on clinical and social outcomes are often not normally distributed. To avoid the pitfall of applying parametric tests to non-parametric data, we aim to apply the following standards to all data before inclusion:
+BR
+PP Please note, we will enter data from studies of at least 200 participants, for example, in the analysis irrespective of the following rules, because skewed data pose less of a problem in large studies. We will also enter change data as when continuous data are presented on a scale that includes a possibility of negative values (such as change data), it is difficult to tell whether data are skewed or not. We will present and enter change data into statistical analyses
+PP For endpoint data:
+PP (a) when a scale starts from the ﬁnite number zero, we will subtract the lowest possible value from the mean, and divided this by the standard deviation. If this value is lower than 1, it strongly suggests a skew and the study will be excluded. If this ratio is higher than one but below 2, there is suggestion of skew. We will enter the study and test whether its inclusion or exclusion would change the results substantially. Finally, if the ratio is larger than 2 the study will be included, because skew is less likely (
+LR Altman 1996
+SP ; 
+LR Higgins 2011
+SP ).
+PP b) if a scale starts from a positive value (such as the Positive and Negative Syndrome Scale (PANSS), (
+LR Kay 1986
+SP )) which can have values from 30 to 210), the calculation described above will be modified to take the scale starting point into account. In these cases skew is present if 2 SD > (S-S min), where S is the mean score and 'S min' is the minimum score.
+H5 2.5 Common measure
+PP To facilitate comparison between trials, we intend to convert variables that can be reported in different metrics, such as days in hospital (mean days per year, per week or per month) to a common metric (e.g. mean days per month).
+H5 2.6 Conversion of continuous to binary
+PP Where possible, efforts will be made to convert outcome measures to dichotomous data. This can be done by identifying cut-off points on rating scales and dividing participants accordingly into 'clinically improved' or 'not clinically improved'. It is generally assumed that if there is a 50% reduction in a scale-derived score such as the Brief Psychiatric Rating Scale (BPRS, 
+LR Overall 1962
+SP ) or the Positive and Negative Syndrome Scale (PANSS, 
+LR Kay 1986
+SP ), this could be considered as a clinically significant response (
+LR Leucht 2005
+SP , 
+LR Leucht 2005a
+SP ). If data based on these thresholds are not available, we will use the primary cut-off presented by the original authors.
+H5 2.7 Direction of graphs
+PP Where possible, we will enter data in such a way that the area to the left of the line of no effect indicates a favourable outcome for INSERT YOUR INTERVENTION. Where keeping to this makes it impossible to avoid outcome titles with clumsy double-negatives (e.g. 'Not un-improved') we will report data where the left of the line indicates an unfavourable outcome. This will be noted in the relevant graphs.
+
+
+----Assessment of risk of bias in included studies---- 
+PP Again review authors INSERT RELEVANT INITIALS will work independently to assess risk of bias by using criteria described in the 
+II Cochrane Handbook for Systemic reviews of Interventions 
+SP (
+LR Higgins 2011
+SP ) to assess trial quality. This set of criteria is based on evidence of associations between overestimate of effect and high risk of bias of the article such as sequence generation, allocation concealment, blinding, incomplete outcome data and selective reporting.
+SP If the raters disagree, the final rating will be made by consensus, with the involvement of another member of the review group. Where inadequate details of randomisation and other characteristics of trials are provided, authors of the studies will be contacted in order to obtain further information. Non-concurrence in quality assessment will be reported, but if disputes arise as to which category a trial is to be allocated, again, we will resolve by --
+SP The level of risk of bias will be noted in both the text of the review and in the Summary of findings table.
+
+----Measures of treatment effect---- 
+H4 1. Binary data
+PP For binary outcomes we will calculate a standard estimation of the risk ratio (RR) and its 95% confidence interval (CI). It has been shown that RR is more intuitive (
+LR Boissel 1999
+SP ) than odds ratios and that odds ratios tend to be interpreted as RR by clinicians (
+LR Deeks 2000
+SP ). The Number Needed to Treat/Harm (NNT/H) statistic with its confidence intervals is intuitively attractive to clinicians but is problematic both in its accurate calculation in meta-analyses and interpretation (
+LR Hutton 2009
+SP ). For binary data presented in the 'Summary of findings' table/s, where possible, we will calculate illustrative comparative risks.
+H4 2. Continuous data
+PP For continuous outcomes will estimate mean difference (MD) between groups. We prefer not to calculate effect size measures (standardised mean difference SMD). However, if scales of very considerable similarity are used, we will presume there is a small difference in measurement, and we will calculate effect size and transform the effect back to the units of one or more of the specific instruments.
+
+----Unit of analysis issues---- 
+H4 1. Cluster trials
+PP Studies increasingly employ 'cluster randomisation' (such as randomisation by clinician or practice) but analysis and pooling of clustered data poses problems. Firstly, authors often fail to account for intra-class correlation in clustered studies, leading to a 'unit of analysis' error (
+LR Divine 1992
+SP ) whereby p values are spuriously low, confidence intervals unduly narrow and statistical significance overestimated. This causes type I errors (
+LR Bland 1997
+SP ; 
+LR Gulliford 1999
+SP ). 
+PP Where clustering is not accounted for in primary studies, we will present data in a table, with a (*) symbol to indicate the presence of a probable unit of analysis error. In subsequent versions of this review we will seek to contact first authors of studies to obtain intra-class correlation coefficients for their clustered data and to adjust for this by using accepted methods (
+LR Gulliford 1999
+SP ). Where clustering has been incorporated into the analysis of primary studies, we will present these data as if from a non-cluster randomised study, but adjust for the clustering effect.
+PP We have sought statistical advice and have been advised that the binary data as presented in a report should be divided by a 'design effect'. This is calculated using the mean number of participants per cluster (m) and the intra-class correlation coefficient (ICC) [Design effect = 1+(m-1)*ICC] (
+LR Donner 2002
+SP ). 
+SP If the ICC is not reported it will be assumed to be 0.1 (
+LR Ukoumunne 1999
+SP ).
+PP If cluster studies have been appropriately analysed taking into account intra-class correlation coefficients and relevant data documented in the report, synthesis with other studies will be possible using the generic inverse variance technique.
+H4 2. Cross-over trials
+PP A major concern of cross-over trials is the carry-over effect. It occurs if an effect (e.g. pharmacological, physiological or psychological) of the treatment in the first phase is carried over to the second phase. As a consequence on entry to the second phase the participants can differ systematically from their initial state despite a wash-out phase. For the same reason cross-over trials are not appropriate if the condition of interest is unstable (
+LR Elbourne 2002
+SP ). As both effects are very likely in severe mental illness, we will only use data of the first phase of cross-over studies.
+H4 3. Studies with multiple treatment groups
+PP Where a study involves more than two treatment arms, if relevant, the additional treatment arms will be presented in comparisons. If data are binary these will be simply added and combined within the two-by-two table. If data are continuous we will combine data following the formula in section 7.7.3.8  (Combining groups) of the 
+II Cochrane Handbook for Systemic reviews of Interventions
+SP (
+LR Higgins 2011
+SP ). Where the additional treatment arms are not relevant, we will not use these data.
+
+----Dealing with missing data----
+H4 1. Overall loss of credibility
+PP At some degree of loss of follow-up data must lose credibility (
+LR Xia 2009
+SP ). We choose that, for any particular outcome, should more than 50% of data be unaccounted for, we will not reproduce these data or use them within analyses. If, however, more than 50% of those in one arm of a study are lost, but the total loss is less than 50%, we will address this within the Summary of Findings table/s by down-rating quality. Finally, we will also downgrade quality within the Summary of Findings table/s should loss be 25-50% in total.
+H4 2. Binary
+PP In the case where attrition for a binary outcome is between 0 and 50% and where these data are not clearly described, we will present data on a 'once-randomised-always-analyse' basis (an intention to treat analysis). Those leaving the study early are all assumed to have the same rates of negative outcome as those who completed, with the exception of the outcome of death and adverse effects. For these outcomes the rate of those who stay in the study - in that particular arm of the trial - will be used for those who did not. We will undertake a sensitivity analysis testing how prone the primary outcomes are to change when data only from people who complete the study to that point are compared to the intention to treat analysis using the above assumptions.
+H4 3. Continuous
+H5 3.1 Attrition
+PP In the case where attrition for a continuous outcome is between 0 and 50%, and data only from people who complete the study to that point are reported, we will reproduce these.
+H5 3.2 Standard deviations
+PP If standard deviations are not reported, we will first try to obtain the missing values from the authors. If not available, where there are missing measures of variance for continuous data, but an exact standard error and confidence intervals available for group means, and either 'p' value or 't' value available for differences in mean, we can calculate them according to the rules described in the 
+II Cochrane Handbook for Systemic reviews of Interventions
+SP (
+LR Higgins 2011
+SP ): When only the standard error (SE) is reported, standard deviations (SDs) are calculated by the formula SD = SE * square root (n). Chapters 7.7.3 and 16.1.3 of the 
+II Cochrane Handbook for Systemic reviews of Interventions 
+SP (
+LR Higgins 2011
+SP ) present detailed formula for estimating SDs from p-values, t or F values, confidence intervals, ranges or other statistics. If these formula do not apply, we will calculate the SDs according to a validated imputation method which is based on the SDs of the other included studies (
+LR Furukawa 2006
+SP ). Although some of these imputation strategies can introduce error, the alternative would be to exclude a given study’s outcome and thus to lose information. We nevertheless will examine the validity of the imputations in a sensitivity analysis excluding imputed values.
+H5 3.3 Assumptions about participants who left the trials early or were lost to follow-up
+PP Various methods are available to account for participants who left the trials early or were lost to follow-up. Some trials just present the results of study completers, others use the method of last observation carried forward (LOCF), while more recently methods such as multiple imputation or mixed effects models for repeated measurements (MMRM) have become more of a standard. While the latter methods seem to somewhat better than LOCF (
+LR Leon 2006
+SP), we feel that the high percentage of participants leaving the studies early and differences in the reasons for leaving the studies early between groups is often the core problem in randomised schizophrenia trials. We will therefore not exclude studies based on the statistical approach used. However, we will preferably use the more sophisticated approaches. E.g. MMRM or multiple-imputation will be preferred to LOCF and completer analyses will only be presented if some kind of ITT data are not available at all. Moreover, we will address this issue in the item "incomplete outcome data" of the risk of bias tool.
+
+----Assessment of heterogeneity---- 
+H4 1. Clinical heterogeneity
+PP We will consider all included studies initially, without seeing comparison data, to judge clinical heterogeneity. We will simply inspect all studies for clearly outlying people or situations which we had not predicted would arise. When such situations or participant groups arise, these will be fully discussed.
+H4 2. Methodological heterogeneity
+PP We will consider all included studies initially, without seeing comparison data, to judge methodological heterogeneity. We will simply inspect all studies for clearly outlying methods which we had not predicted would arise. When such methodological outliers arise these will be fully discussed.
+H4 3. Statistical heterogeneity
+H5 3.1 Visual inspection
+PP We will visually inspect graphs to investigate the possibility of statistical heterogeneity.
+H5 3.2 Employing the I
+SH 2
+SH statistic
+PP Heterogeneity between studies will be investigated by considering the I
+SU 2
+SP method alongside the Chi
+SU 2
+SP 'p' value. The I
+SU 2
+SP provides an estimate of the percentage of inconsistency thought to be due to chance (
+LR Higgins 2003
+SP ). The importance of the observed value of I
+SU 2
+SP depends on i. magnitude and direction of effects and ii. strength of evidence for heterogeneity (e.g. 'p' value from Chi2  test, or a confidence interval for I
+SU 2
+SP ). I
+SU 2 
+SP estimate greater than or equal to around 50% accompanied by a statistically significant Chi
+SU 2
+SP statistic, will be interpreted as evidence of substantial levels of heterogeneity (Section 9.5.2 – 
+LR Higgins 2011
+SP ). When substantial levels of heterogeneity are found in the primary outcome, we will explore reasons for heterogeneity (
+!! Subgroup analysis and investigation of heterogeneity
+SP ).
+
+----Assessment of reporting biases---- 
+H4 1. Protocol versus full study
+PP Reporting biases arise when the dissemination of research findings is influenced by the nature and direction of results. These are described in section 10.1 of the 
+II Cochrane Handbook for Systemic reviews of Interventions
+SP (
+LR Higgins 2011
+SP ). We will try to locate protocols of included randomised trials. If the protocol is available, outcomes in the protocol and in the published report will be compared. If the protocol is not available, outcomes listed in the methods section of the trial report will be compared with actually reported results.
+H4 2. Funnel plot
+PP Reporting biases arise when the dissemination of research findings is influenced by the nature and direction of results (
+LR Egger 1997
+SP ). These are again described in Section 10 of the 
+II Cochrane Handbook for Systemic reviews of Interventions
+SP (
+LR Higgins 2011
+SP ). We are aware that funnel plots may be useful in investigating reporting biases but are of limited power to detect small-study effects. We will not use funnel plots for outcomes where there are ten or fewer studies, or where all studies are of similar sizes. In other cases, where funnel plots are possible, we will seek statistical advice in their interpretation.
+
+----Data synthesis---- 
+PP We understand that there is no closed argument for preference for use of fixed or random-effects models. The random-effects method incorporates an assumption that the different studies are estimating different, yet related, intervention effects. This often seems to be true to us and the random-effects model takes into account differences between studies even if there is no statistically significant heterogeneity. There is, however, a disadvantage to the random effects model. It puts added weight onto small studies which often are the most biased ones. Depending on the direction of effect these studies can either inflate or deflate the effect size. We choose CHOOSE TO USE RANDOM OR FIXED MODEL model for all analyses. The reader is, however, able to choose to inspect the data using the STATE THE OPPOSITE TO THE ONE CHOSEN ABOVE.
+
+----Subgroup analysis and investigation of heterogeneity----
+H4 1. Subgroup analyses
+H5 1.1 Primary outcomes
+PP XXXXXXXXXXXXX - DESCRIBE ANY SUB-GROUP ANALYSIS YOU WISH TO DO - OR IF NOT - SAY NO SUBGROUP ANALYSIS ANTICIAPTED ETC
+H5 1.2 Clinical state, stage or problem
+PP We propose to undertake this review and provide an overview of the effects of INSERT YOUR INTERVENTION for people with schizophrenia in general. In addition, however, we will try to report data on subgroups of people in the same clinical state, stage and with similar problems.
+PP If inconsistency is high, this will be reported. First we will investigate whether data has been entered correctly. Second, if data is correct, the graph will be visually inspected and studies outside of the company of the rest will be successively removed to see if homogenity is restored. For this review we decided that should this occur with data contributing to the summary finding of no more than around 10% of the total weighting, data will be presented. If not, data are not pooled and issues will be discussed. We know of no supporting research for this 10% cut off but are investigating use of prediction intervals as an alternative to this unsatisfactory state.
+PP When unanticipated clinical or methodological heterogeneity are obvious we will simply state hypotheses regarding these for future reviews or versions of this review. We do not anticipate undertaking analyses relating to these.
+
+----Sensitivity analysis---- 
+H4 1. Implication of randomisation
+PP We aim to include trials in a sensitivity analysis if they are described in some way as to imply randomisation. For the primary outcomes we will include these studies and if there is no substantive difference when the implied randomised studies are added to those with better description of randomisation, then all data will be employed from these studies.
+H4 2. Assumptions for lost binary data
+PP Where assumptions have to be made regarding people lost to follow-up (see Dealing with missing data) we will compare the findings of the primary outcomes when we use our assumption/s and when we use data only from people who complete the study to that point. If there is a substantial difference, we will report results and discuss them but will continue to employ our assumption.
+PP Where assumptions have to be made regarding missing SDs data (see Dealing with missing data), we will compare the findings of the primary outcomes when we use our assumption/s and when we use data only from people who complete the study to that point. A sensitivity analysis will be undertaken testing how prone results are to change when completer-only data only are compared to the imputed data using the above assumption. If there is a substantial difference, we will report results and discuss them but will continue to employ our assumption.
+H4 3. Risk of bias
+PP We will analyse the effects of excluding trials that are judged to be at high risk of bias across one or more of the domains of randomisation (implied as randomised with no further details available) allocation concealment, blinding and outcome reporting for the meta-analysis of the primary outcome. If the exclusion of trials at high risk of bias does not substantially alter the direction of effect or the precision of the effect estimates, then data from these trials will be included in the analysis.
+H4 4. Imputed values
+PP We will also undertake a sensitivity analysis to assess the effects of including data from trials where we used imputed values for ICC in calculating the design effect in cluster randomised trials.
+PP If substantial differences are noted in the direction or precision of effect estimates in any of the sensitivity analyses listed above, we will not pool data from the excluded trials with the other trials contributing to the outcome, but will present them separately.
+H4 5. Fixed and random effects
+PP All data will be synthesised using a STATE WHICH TYPE OF SYNTHESIS USING model, however, we will also synthesise data for the primary outcome using a AGAIN SAY THE OPPOSITE TO THE ONE YOU HAVE CHOSEN model to evaluate whether this alters the significance of the results
+
+----Results----
+
+----Description of studies---- 
+
+----Results of the search----
+ 
+----Included studies----
+ 
+----Excluded studies----
+ 
+----Risk of bias in included studies----
+ 
+----Allocation (selection bias)---- 
+
+----Blinding (performance bias and detection bias)---- 
+
+----Incomplete outcome data (attrition bias)----
+ 
+----Selective reporting (reporting bias)----
+ 
+----Other potential sources of bias----
+ 
+----Effects of interventions---- 
+
+----Discussion----
+ 
+----Summary of main results----
+ 
+----Overall completeness and applicability of evidence----
+ 
+----Quality of the evidence---- 
+
+----Potential biases in the review process---- 
+
+----Agreements and disagreements with other studies or reviews----
+ 
+----Authors' conclusions----
+ 
+----Implications for practice----
+ 
+----Implications for research---- 
+
+----Acknowledgements----
+PP IF YOU HAVE ANY EXTRA ACKNOWLEDGMENTS PUT THEM IN HERE (SEE YELLOW NOTEBOX ABOVE)
+PP The Cochrane Schizophrenia Group Editorial Base in Nottingham produces and maintains standard text for use in the Methods section of their reviews. We have used this text as the basis of what appears here and adapted it as required.
+PP The search term was developed by the Trial Search Co-ordinator of the Cochrane Schizophrenia Group and the contact author of this protocol.
+
+----Contributions of authors----
+PP MUST BE COMPLETED (SEE YELLOW NOTEBOX ABOVE)
+
+----Declarations of interest---- 
+PP MUST BE COMPLETED (SEE YELLOW NOTEBOX ABOVE)
+
+
+RT:Journal article
+AU:Altman DG, Bland JM
+TI:Detecting skewness from summary information
+SO:BMJ
+YR:1996
+VL:313
+NO:7066
+PG:1200
+
+RT:Journal article
+AU:Bland JM
+TI:Statistics notes. Trials randomised in clusters
+SO:BMJ
+YR:1997
+VL:315
+PG:600
+
+RT:Journal article
+AU:Boissel JP, Cucherat M, Li W, Chatellier G, Gueyffier F, Buyse M, et al
+TI:The problem of therapeutic efficacy indices. 3. Comparison of the indices and their use
+TO:Apercu sur la problematique des indices d'efficacite therapeutique, 3: comparaison des indices et utilisation. Groupe d'Etude des Indices D'efficacite
+SO:Therapie
+YR:1999
+VL:54
+NO:4
+PG:405-11
+ID:PUBMED 10667106
+
+RT:Conference proceedings
+AU:Deeks J
+TI:Issues in the selection for meta-analyses of binary data
+SO:Proceedings of the 8th International Cochrane Colloquium; 2000 Oct 25-28; Cape Town
+YR:2000
+PB:The Cochrane Collaboration
+CY:Cape Town
+
+RT:Journal article
+AU:Divine GW, Brown JT, Frazier LM
+TI:The unit of analysis error in studies about physicians' patient care behavior
+SO:Journal of General Internal Medicine
+YR:1992
+VL:7
+NO:6
+PG:623-9
+
+RT:Journal article
+AU:Donner A, Klar N
+TI:Issues in the meta-analysis of cluster randomized trials
+SO:Statistics in Medicine
+YR:2002
+VL:21
+PG:2971-80
+
+RT:Journal article
+AU:Egger M, Davey Smith G, Schneider M, Minder C
+TI:Bias in meta-analysis detected by a simple, graphical test
+SO:BMJ
+YR:1997
+VL:315
+PG:629-34
+
+RT:Journal article
+AU:Elbourne D, Altman DG, Higgins JPT, Curtina F, Worthingtond HV, Vaile A
+TI:Meta-analyses involving cross-over trials: methodological issues
+SO:International Journal of Epidemiology
+YR:2002
+VL:31
+NO:1
+PG:140-9
+
+RT:Journal article
+AU:Furukawa TA, Barbui C, Cipriani A, Brambilla P, Watanabe N
+TI:Imputing missing standard deviations in meta-analyses can provide accurate results
+SO:Journal of Clinical Epidemiology
+YR:2006
+VL:59
+NO:7
+PG:7-10
+
+RT:Journal article
+AU:Gulliford MC
+TI:Components of variance and intraclass correlations for the design of community-based surveys and intervention studies: data from the Health Survey for England 1994
+SO:American Journal of Epidemiology
+YR:1999
+VL:149
+PG:876-83
+
+RT:Journal article
+AU:Higgins JP, Thompson SG, Deeks JJ, Altman DG
+TI:Measuring inconsistency in meta-analyses
+SO:BMJ
+YR:2003
+VL:327
+PG:557-60
+
+RT:Other
+AU:Higgins JPT, Green S (editors)
+TI:Cochrane Handbook for Systematic Reviews of Interventions Version 5.0.2 [updated September 2011]. The Cochrane Collaboration, 2011
+SO:Available from www.cochrane-handbook.org.
+YR:2011
+
+RT:Journal article
+AU:Hutton JL
+TI:Number needed to treat and number needed to harm are not the best way to report and assess the results of randomised clinical trials
+SO:British Journal of Haematology
+YR:2009
+VL:146
+NO:1
+PG:27-30
+
+RT:Book
+AU:Kay SR, Opler LA, Fiszbein A
+SO:Positive and Negative Syndrome Scale (PANSS) Manual
+YR:1986
+PB:North Tonawanda, NY: Multi-Health Systems
+
+RT:Journal article
+AU:Leon AC, Mallinckrodt CH, Chuang-Stein C, Archibald DG, Archer GE, Chartier K
+TI:Attrition in randomized controlled clinical trials: methodological issues in psychopharmacology
+SO:Biological Psychiatry
+YR:2006
+VL:59
+NO:11
+PG:1001-5
+ID:PUBMED 16905632
+
+RT:Journal article
+AU:Leucht S, Kane JM, Kissling W, Hamann J, Etschel E, Engel RR
+TI:What does the PANSS mean?
+SO:Schizophrenia Research
+YR:2005
+VL:79
+NO:2-3
+PG:231-8
+ID:PUBMED 15982856
+
+RT:Journal article
+AU:Leucht S, Kane JM, Kissling W, Hamann J, Etschel E, Engel R
+TI:Clinical implications of brief psychiatric rating scale scores
+SO:British Journal of Psychiatry
+YR:2005
+VL:187
+PG:366-71
+ID:PUBMED 16199797
+
+RT:Journal article
+AU:Leucht S, Engel RR, Bauml J, Davis JM
+TI:Is the superior efficacy of new generation antipsychotics an artifact of LOCF?
+SO:Schizophrenia Bulletin
+YR:2007
+VL:33
+NO:1
+PG:183-91
+ID:PUBMED 16905632
+
+RT:Journal article
+AU:Marshall M, Lockwood A, Bradley C, Adams C, Joy C, Fenton M
+TI:Unpublished rating scales: a major source of bias in randomised controlled trials of treatments for schizophrenia
+SO:British Journal of Psychiatry
+YR:2000
+VL:176
+PG:249-52
+
+RT:Journal article
+AU:Overall JE, Gorham DR
+TI:The brief psychiatric rating scale
+SO:Psychological Reports
+YR:1962
+VL:10
+PG:799-812
+
+RT:Section of book
+AU:Schünemann HJ, Oxman AD, Vist GE, Higgins JPT, Deeks JJ, Glasziou P, et al
+TI:Chapter 12: Interpreting results and drawing conclusions
+SO:Cochrane Handbook for Systematic Reviews of Interventions
+YR:2008
+PG:359-83
+ED:Higgins JPT, Green S
+PB:The Cochrane Collaboration
+
+RT:Journal article
+AU:Ukoumunne OC, Gulliford MC, Chinn S, Sterne JAC, Burney PGJ
+TI:Methods for evaluating area-wide and organistation-based intervention in health and health care: a systematic review
+SO:Health Technology Assessment
+YR:1999
+VL:3
+NO:5
+PG:1-75
+
+RT:Journal article
+AU:Xia J, Adams CE, Bhagat N, Bhagat V, Bhoopathi P, El-Sayeh H, et al
+TI:Loss to outcomes stakeholder survey: the LOSS study
+SO:Psychiatric Bulletin
+YR:2009
+VL:33
+NO:7
+PG:254-7

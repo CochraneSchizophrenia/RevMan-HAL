@@ -18,7 +18,6 @@ public class ExportInstructionNew extends javax.swing.JFrame {
      */
     public ExportInstructionNew() {
          initComponents();
-         this.setTitle("RevMan Hal - Export Instructions");
     }
 
     /**
@@ -74,17 +73,17 @@ public class ExportInstructionNew extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("2.) Click \"File\" --> \"Exports\" --> \"Data and analyses\"");
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/export1.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RevManHalCochraneMode/export1.png"))); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel8.setText(" >> The following window appears:");
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/export2.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RevManHalCochraneMode/export2.png"))); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel10.setText("3.) Uncheck the checkbox \"Risk of bias tables\" and click \"Next\"");
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/export3.png"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RevManHalCochraneMode/export3.png"))); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel12.setText(" >> The following window appears:");
@@ -95,7 +94,7 @@ public class ExportInstructionNew extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel14.setText(" >> The following window appears:");
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/export4.png"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RevManHalCochraneMode/export4.png"))); // NOI18N
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel16.setText("5.) As Field Delimiter select \"Semicolon\" and click \"Finish\"");
@@ -103,12 +102,12 @@ public class ExportInstructionNew extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel18.setText("6.) Choose a file name and save the file as a csv-file");
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/export5.png"))); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RevManHalCochraneMode/export5.png"))); // NOI18N
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel20.setText("7.) It's done! :-)");
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/rm5logo.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RevManHalCochraneMode/rm5logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

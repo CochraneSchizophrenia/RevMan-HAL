@@ -8,7 +8,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowEvent;
 import javax.swing.filechooser.FileNameExtensionFilter;
 /**
  *
@@ -20,15 +19,10 @@ public class FrameStart extends javax.swing.JFrame
     /**
      * Creates new form ModeChoiseNew
      */
-    public FrameStart(String path, String csv) {
+    public FrameStart() {
          
         initComponents();
-        this.setLocation(320, 150);
-        tfBrowsed.setText(path);
-        tfBrowsed2.setText(csv);
-        this.setTitle("RevMan Hal - Start");
-        jPanel1.setBackground(new Color(226,226,226));
-        this.setBackground(new Color(226,226,226));
+        this.setLocation(250, 250);
     }
 
     /**
@@ -49,20 +43,23 @@ public class FrameStart extends javax.swing.JFrame
         jLabel3 = new javax.swing.JLabel();
         btn_protocol = new javax.swing.JButton();
         btn_review = new javax.swing.JButton();
-        btn_protToRev = new javax.swing.JButton();
+        btn_update = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         btnBrowse = new javax.swing.JButton();
         tfBrowsed = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        btnHelp = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         btnBrowse2 = new javax.swing.JButton();
         tfBrowsed2 = new javax.swing.JTextField();
-        btn_export1 = new javax.swing.JButton();
+        tfBrowsed3 = new javax.swing.JTextField();
+        btnBrowse3 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         menu_about = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(247, 247, 247));
 
@@ -75,9 +72,10 @@ public class FrameStart extends javax.swing.JFrame
         jLabel2.setText("RevMan HAL ");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel4.setText("<html><body>RevMan Hal is a tool for adding text automatically to special parts in a RevMan file. You can now also choose between different stages.  </body></html>");
+        jLabel4.setText("<html><body>RevManHal is a tool for adding text automatically to special parts in a RevMan file. You can choose between different stages where you want to work on your RevMan file.  </body></html>");
 
-        btn_exit.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn_exit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_exit.setForeground(new java.awt.Color(0, 102, 0));
         btn_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/exit.png"))); // NOI18N
         btn_exit.setText("EXIT");
         btn_exit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -104,18 +102,12 @@ public class FrameStart extends javax.swing.JFrame
             }
         });
 
-        btn_protToRev.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        btn_protToRev.setText("Prot. to rev.");
-        btn_protToRev.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_protToRevMouseClicked(evt);
-            }
-        });
+        btn_update.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_update.setText("Update");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Stage:");
 
-        btnBrowse.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnBrowse.setText("Browse");
         btnBrowse.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -126,10 +118,11 @@ public class FrameStart extends javax.swing.JFrame
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setText("Please browse your RevMan-File:");
 
+        btnHelp.setText("Help");
+
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel7.setText("Please browse your exported CSV-File:");
 
-        btnBrowse2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnBrowse2.setText("Browse");
         btnBrowse2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -137,32 +130,33 @@ public class FrameStart extends javax.swing.JFrame
             }
         });
 
-        btn_export1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btn_export1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/help.png"))); // NOI18N
-        btn_export1.setText("Export help?");
-        btn_export1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnBrowse3.setText("Browse");
+        btnBrowse3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_export1MouseClicked(evt);
+                btnBrowse3MouseClicked(evt);
             }
         });
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel8.setText("Please browse your GRADE-File:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(6, 6, 6)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -170,71 +164,87 @@ public class FrameStart extends javax.swing.JFrame
                                         .addComponent(btnBrowse, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(tfBrowsed, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(btnBrowse2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfBrowsed2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btn_export1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnHelp)
+                                .addGap(138, 138, 138)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(30, 30, 30))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(btn_review, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(btn_protocol, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(btn_protToRev, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(btn_exit))
-                                .addGap(9, 9, 9))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(btn_review, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btn_protocol, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btn_update, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(66, 66, 66))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(193, 457, Short.MAX_VALUE)
-                                .addComponent(jLabel3)))
-                        .addGap(35, 35, 35))))
+                                .addComponent(btn_exit)
+                                .addContainerGap())))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnBrowse3, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfBrowsed3, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnBrowse2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfBrowsed2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(11, 11, 11)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(6, 6, 6)
-                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(jLabel3)))
-                        .addGap(19, 19, 19)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnBrowse, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfBrowsed, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnBrowse2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfBrowsed2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(tfBrowsed, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(60, 60, 60)
                         .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn_protocol, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_protToRev, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_review, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_export1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_exit, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(36, 36, 36))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_review, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)
+                        .addComponent(btn_update, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBrowse2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfBrowsed2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBrowse3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfBrowsed3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_exit)
+                    .addComponent(btnHelp))
+                .addGap(43, 43, 43))
         );
 
         jMenu2.setText("About");
@@ -273,7 +283,7 @@ public class FrameStart extends javax.swing.JFrame
     }//GEN-LAST:event_btn_exitMouseClicked
 
     private void menu_aboutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_aboutMousePressed
-        FrameAbout af = new FrameAbout();
+        aboutFrame af = new aboutFrame();
         af.setVisible(true);
         af.setLocationRelativeTo(null);
     }//GEN-LAST:event_menu_aboutMousePressed
@@ -298,21 +308,12 @@ public class FrameStart extends javax.swing.JFrame
         // TODO add your handling code here:
         
         if (tfBrowsed.getText().toString().equals("")) {
-            JOptionPane.showMessageDialog(this, "Please select first a valid Rev-Man file before going to the next step!", "ERROR", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Please select first a valid Rev-Man file before going to the next step!", "Warning", JOptionPane.WARNING_MESSAGE);
         }
-        else if (tfBrowsed2.getText().toString().equals("")) {
-            JOptionPane.showMessageDialog(this, "Please select a .csv file to proceed to review!", "ERROR", JOptionPane.WARNING_MESSAGE);
-        } 
-        else if(tfBrowsed.getText().contains("["))
-        {
-             JOptionPane.showMessageDialog(this, "There are some brackets in the name of your file. Please remove them.", "ERROR", JOptionPane.WARNING_MESSAGE);
-        }
-         else if(tfBrowsed.getText().substring(0,tfBrowsed.getText().length()-4).contains("."))
-        {
-             JOptionPane.showMessageDialog(this, "There is at least one dot in the name of your file. Please remove it/them.", "ERROR", JOptionPane.WARNING_MESSAGE);
-        }
-        else {
-            FrameReview frame = new FrameReview(tfBrowsed.getText().toString(), tfBrowsed2.getText().toString()); 
+        else if (tfBrowsed2.getText().toString().equals("") && tfBrowsed3.getText().toString().equals("")) {
+            JOptionPane.showMessageDialog(this, "Please select at least the .csv or the GRADE file to proceed to review!", "Warning", JOptionPane.WARNING_MESSAGE);
+        } else {
+            FrameReview frame = new FrameReview(tfBrowsed.getText().toString(), tfBrowsed2.getText().toString(), tfBrowsed3.getText().toString());
             frame.setVisible(true);
             frame.validate();
             this.dispose();
@@ -333,7 +334,7 @@ public class FrameStart extends javax.swing.JFrame
 		// Ausgabe der ausgewaehlten Datei
 		tfBrowsed.setText(chooser.getSelectedFile().getAbsolutePath());
 
-		if (!tfBrowsed.getText().substring(tfBrowsed.getText().length()-4, tfBrowsed.getText().length()).equals(".rm5"))
+		if (!tfBrowsed.getText().substring(tfBrowsed.getText().indexOf(".")).equals(".rm5"))
 		{
 			JOptionPane.showMessageDialog(this, "Please choose a valid .rm5 file", "Warning", JOptionPane.WARNING_MESSAGE);
 			tfBrowsed.setText("");
@@ -379,59 +380,38 @@ public class FrameStart extends javax.swing.JFrame
                 
     }//GEN-LAST:event_btnBrowse2MouseClicked
 
-    private void btn_protToRevMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_protToRevMouseClicked
-        
-         if (tfBrowsed.getText().toString().equals("")) {
-            JOptionPane.showMessageDialog(this, "Please select first a valid Rev-Man file before going to the next step!", "ERROR", JOptionPane.WARNING_MESSAGE);
-        }
-        
-        else if(tfBrowsed.getText().contains("["))
-        {
-             JOptionPane.showMessageDialog(this, "There are some brackets in the name of your file. Please remove them.", "ERROR", JOptionPane.WARNING_MESSAGE);
-        }
-         else if(tfBrowsed.getText().substring(0,tfBrowsed.getText().length()-4).contains("."))
-        {
-             JOptionPane.showMessageDialog(this, "There is at least one dot in the name of your file. Please remove it/them.", "ERROR", JOptionPane.WARNING_MESSAGE);
-        }
-        else {
-            FrameProtocolToReview frame = new  FrameProtocolToReview(tfBrowsed.getText().toString());
-            frame.setVisible(true);
-            frame.validate();
-            this.dispose();
-        }
-        
-        
-        
-    }//GEN-LAST:event_btn_protToRevMouseClicked
+    private void btnBrowse3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBrowse3MouseClicked
+        // TODO add your handling code here:
+         try
+         {
+            JFileChooser chooser = new JFileChooser();
+            FileNameExtensionFilter filter = new FileNameExtensionFilter( "GRADE files",  "xml");
+            chooser.setFileFilter(filter);
 
-    private void btn_export1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_export1MouseClicked
-            try {
-            ExportInstructionNew export = new ExportInstructionNew();
-            export.setVisible(true);
-            export.setLocationRelativeTo(null);
-        }
-        catch (Exception e)
-        {
-          JOptionPane.showMessageDialog(this, e.toString(), "ERROR", JOptionPane.WARNING_MESSAGE);
-        }
-    }//GEN-LAST:event_btn_export1MouseClicked
+            int rueckgabeWert = chooser.showOpenDialog(null);
 
-   protected void processWindowEvent(WindowEvent e)             // for pressing the "x" in the top right corner
- {
-        if(e.getID()==WindowEvent.WINDOW_CLOSING)
-  {
+            /* Abfrage, ob auf "Öffnen" geklickt wurde */
+            if(rueckgabeWert == JFileChooser.APPROVE_OPTION)
+            {
+                // Ausgabe der ausgewaehlten Datei
+                tfBrowsed3.setText(chooser.getSelectedFile().getAbsolutePath());
 
-  if(JOptionPane.showConfirmDialog(null, "<html><body>Do you really want to close the program?<body><html>"   
-     , "WARNING",
-     JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
-   {
-    super.processWindowEvent(e);
-                                System.exit(0);
-                        }
+                if (!tfBrowsed3.getText().substring(tfBrowsed3.getText().indexOf(".")).equals(".xml")){
+                    JOptionPane.showMessageDialog(this, "Please choose a valid .csv file", "Warning", JOptionPane.WARNING_MESSAGE);
+                    tfBrowsed3.setText("");
                 }
-    }
-    
-    
+                else 
+                {
+                }
+            }
+         }
+         catch(Exception e)
+         {
+         
+         }
+        
+    }//GEN-LAST:event_btnBrowse3MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -462,18 +442,19 @@ public class FrameStart extends javax.swing.JFrame
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrameStart(null, null).setVisible(true);
+                new FrameStart().setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBrowse;
     private javax.swing.JButton btnBrowse2;
+    private javax.swing.JButton btnBrowse3;
+    private javax.swing.JButton btnHelp;
     private javax.swing.JButton btn_exit;
-    private javax.swing.JButton btn_export1;
-    private javax.swing.JButton btn_protToRev;
     private javax.swing.JButton btn_protocol;
     private javax.swing.JButton btn_review;
+    private javax.swing.JButton btn_update;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -481,6 +462,7 @@ public class FrameStart extends javax.swing.JFrame
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
@@ -488,5 +470,6 @@ public class FrameStart extends javax.swing.JFrame
     private javax.swing.JMenuItem menu_about;
     private javax.swing.JTextField tfBrowsed;
     private javax.swing.JTextField tfBrowsed2;
+    private javax.swing.JTextField tfBrowsed3;
     // End of variables declaration//GEN-END:variables
 }

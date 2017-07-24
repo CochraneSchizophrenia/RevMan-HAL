@@ -5,10 +5,8 @@
 package revmanhalcochranemode;
 
 import com.sun.org.apache.xerces.internal.parsers.*;
-import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Image;
-import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
@@ -24,9 +22,7 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import javax.swing.JDialog;
 import javax.swing.JFileChooser;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.xml.parsers.DocumentBuilder;
@@ -74,8 +70,6 @@ public class FrameBackground extends javax.swing.JFrame
       private boolean firstTime=true;
       private boolean activateMethods=false;
       private boolean checkReferences=false;
-      private boolean pressed1=false;
-      private boolean pressed2=false;
       
       private StringBuffer sbWholeLineLeft = new StringBuffer();
       private StringBuffer sbWholeLineRight = new StringBuffer();
@@ -96,14 +90,10 @@ public class FrameBackground extends javax.swing.JFrame
         initComponents();
         path=p;
         activateMethods=checkedBoth;
-        this.setLocation(320, 80);  
-        jPanel1.setBackground(new Color(226,226,226));
-        this.setBackground(new Color(226,226,226));
+        this.setLocation(250, 100);        
         tfTitle.setEditable(false);
         this.validate();
-        this.setVisible(true);  
-        tfTitle.setCaretPosition(0);
-        this.setTitle("RevMan Hal - Protocol - Background");
+        this.setVisible(true);        
         this.run();
     }
 
@@ -135,7 +125,7 @@ public class FrameBackground extends javax.swing.JFrame
         btnEdit = new javax.swing.JButton();
         btnMethods = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         tfTitle.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 
@@ -145,19 +135,16 @@ public class FrameBackground extends javax.swing.JFrame
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("<html><body>Suggestions for <b> conditions:</b></body></html>");
 
-        btnAddLeft.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnAddLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/AddBtnSmall.png"))); // NOI18N
-        btnAddLeft.setText(" ADD");
-        btnAddLeft.setToolTipText("");
+        btnAddLeft.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnAddLeft.setText("Add");
         btnAddLeft.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAddLeftMouseClicked(evt);
             }
         });
 
-        btnAddRight.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnAddRight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/AddBtnSmall.png"))); // NOI18N
-        btnAddRight.setText(" ADD");
+        btnAddRight.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnAddRight.setText("Add");
         btnAddRight.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAddRightMouseClicked(evt);
@@ -166,7 +153,7 @@ public class FrameBackground extends javax.swing.JFrame
 
         btn_return.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btn_return.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/back.png"))); // NOI18N
-        btn_return.setText(" BACK");
+        btn_return.setText("Back");
         btn_return.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_returnMouseClicked(evt);
@@ -175,14 +162,14 @@ public class FrameBackground extends javax.swing.JFrame
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/hal.png"))); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 28)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel4.setText("Background");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 3, 33)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 102, 249));
         jLabel5.setText("RevMan HAL ");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setText("<html><body>In this part of the program you are able to add the drug or illness information of the title \nto the RevMan file. </body></html>");
 
         taLeft.setColumns(20);
@@ -197,8 +184,7 @@ public class FrameBackground extends javax.swing.JFrame
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setText("Title of the RevMan file you chose:");
 
-        btnEdit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/TxtFileSmall.png"))); // NOI18N
+        btnEdit.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnEdit.setText("Open CSV");
         btnEdit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -206,10 +192,7 @@ public class FrameBackground extends javax.swing.JFrame
             }
         });
 
-        btnMethods.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnMethods.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/arrowRight.png"))); // NOI18N
-        btnMethods.setText("CONTINUE");
-        btnMethods.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        btnMethods.setText("Continue to Methods");
         btnMethods.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnMethodsMouseClicked(evt);
@@ -223,76 +206,81 @@ public class FrameBackground extends javax.swing.JFrame
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
-                    .addComponent(jScrollPane1)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn_return, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(89, 89, 89)
-                        .addComponent(btnEdit)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnMethods, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel4)
-                                .addGap(43, 43, 43))
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(61, 61, 61))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(47, 47, 47)
+                                .addComponent(btnAddRight, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(42, 42, 42)
-                                        .addComponent(btnAddRight, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(tfTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel7)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(26, 26, 26)
-                                        .addComponent(btnAddLeft, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(tfTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addComponent(jLabel3)))
-                .addGap(30, 30, 30))
+                                        .addComponent(btnAddLeft, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(btn_return))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnMethods)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(5, 5, 5)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel7)
-                        .addGap(10, 10, 10))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3)))
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tfTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(55, 55, 55)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddLeft, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAddRight, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAddRight, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)))
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_return, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMethods, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30))
+                    .addComponent(btnMethods, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         jLabel2.getAccessibleContext().setAccessibleName("<html><body>Suggestions for <b>conditions</b>:</body></html>");
@@ -301,11 +289,17 @@ public class FrameBackground extends javax.swing.JFrame
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -316,22 +310,11 @@ public class FrameBackground extends javax.swing.JFrame
         this.dispose();
         FrameProtocol frame = new FrameProtocol(path);
         frame.setVisible(true);
-        
         frame.validate(); 
     }//GEN-LAST:event_btn_returnMouseClicked
 
     private void btnAddLeftMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddLeftMouseClicked
         
-        
-        if(taLeft.getText().isEmpty())
-        {
-             final JOptionPane pane = new JOptionPane("There is no text that could be added!");
-             final JDialog d = pane.createDialog(null, "ERROR");
-             d.setLocation(450, 430);
-             d.setVisible(true);
-        }
-        else if(pressed1==false)
-        {    
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         Date currentTime = new Date();
 
@@ -659,7 +642,7 @@ public class FrameBackground extends javax.swing.JFrame
             cleaner.deleteSpecialChars(path);
             System.out.println("Done");   
             JOptionPane.showMessageDialog(this, "The text was added successfully to your RevMan File","Clue", JOptionPane.WARNING_MESSAGE);  
-            pressed1=true;
+            
         }
         catch(Exception e)
         {
@@ -668,13 +651,8 @@ public class FrameBackground extends javax.swing.JFrame
         }
         
         
-        } 
-        else
-        {
-            JOptionPane.showMessageDialog(this, "You can only press the button once.","Clue", JOptionPane.WARNING_MESSAGE);  
-        }
         
-        btnAddLeft.setEnabled(false);
+        
     }//GEN-LAST:event_btnAddLeftMouseClicked
 
     private void btnEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditMouseClicked
@@ -691,12 +669,12 @@ public class FrameBackground extends javax.swing.JFrame
         }
         catch(Exception e)
         {
-         
-             final JOptionPane pane = new JOptionPane("Error in opening the CSV file! Error message: "+e.toString());
-             final JDialog d = pane.createDialog(null, "ERROR");
-             d.setLocation(450, 430);
-             d.setVisible(true);
         }
+            
+            
+            
+            
+            
             
             
             
@@ -731,16 +709,7 @@ public class FrameBackground extends javax.swing.JFrame
 
     private void btnAddRightMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddRightMouseClicked
        
-        if(taRight.getText().isEmpty())
-        {
-             final JOptionPane pane = new JOptionPane("There is no text that could be added!");
-             final JDialog d = pane.createDialog(null, "ERROR");
-             d.setLocation(450, 430);
-             d.setVisible(true);
-        }
-        else if(pressed2 == false)
-        {    
-            
+        
         String stTextCleanRight = taRight.getText().toString().replaceAll(";", "");
         Vector vAllReferencesCondition = new Vector();
         String stReference="";
@@ -1001,20 +970,13 @@ public class FrameBackground extends javax.swing.JFrame
             cleaner.deleteSpecialChars(path);
             System.out.println("Done");            
             JOptionPane.showMessageDialog(this, "The text was added successfully to your RevMan File","Clue", JOptionPane.WARNING_MESSAGE); 
-            pressed2=true;
         }
         catch(Exception e)
         {
             e.printStackTrace();
         }
         
-        }  
-        else
-        {
-            JOptionPane.showMessageDialog(this, "You can only press the button once.","Clue", JOptionPane.WARNING_MESSAGE);      
-                }
-         
-        btnAddRight.setEnabled(false);
+        
     }//GEN-LAST:event_btnAddRightMouseClicked
 
     private void btnMethodsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMethodsMouseClicked
@@ -1066,9 +1028,9 @@ public class FrameBackground extends javax.swing.JFrame
                     pathCSV = System.getProperty("user.dir");
                                       
 
-                   pathCSV = pathCSV +"\\drugsScalesConditionsReferencesCSV.csv";  //for final version!!!!
+                  //  pathCSV = pathCSV +"\\drugDataNewCSVWithSpace.csv";  //for final version!!!!
                     
-                 //   pathCSV = pathCSV +"\\src\\revmanhalcochranemode\\drugsScalesConditionsReferencesCSV.csv"; 
+                    pathCSV = pathCSV +"\\src\\revmanhalcochranemode\\drugsScalesConditionsReferencesCSV.csv"; 
                     
                     System.out.println("das ist pfad "+pathCSV);
                      Reader fr = new InputStreamReader(new FileInputStream(pathCSV), "UTF-8");
@@ -1446,7 +1408,7 @@ public class FrameBackground extends javax.swing.JFrame
         }
         catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Error! Error message: "+e.toString(),"ERROR", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "error: "+e.toString(),"msg", JOptionPane.WARNING_MESSAGE);
         }
    
     }
@@ -1467,21 +1429,6 @@ public class FrameBackground extends javax.swing.JFrame
             return null;
         }
     }
-       protected void processWindowEvent(WindowEvent e)             // for pressing the "x" in the top right corner
- {
-        if(e.getID()==WindowEvent.WINDOW_CLOSING)
-  {
-
-  if(JOptionPane.showConfirmDialog(null, "<html><body>Do you really want to close the program?<body><html>"   
-     , "WARNING",
-     JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
-   {
-    super.processWindowEvent(e);
-                                System.exit(0);
-                        }
-                }
-    }
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddLeft;
     private javax.swing.JButton btnAddRight;

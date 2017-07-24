@@ -28,8 +28,6 @@ import org.w3c.dom.Node;
 import java.text.DateFormat; 
 import java.text.SimpleDateFormat; 
 import java.util.Date;
-import javax.swing.JDialog;
-import javax.swing.JOptionPane;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Text;
 import org.w3c.dom.traversal.DocumentTraversal;
@@ -109,16 +107,6 @@ public class Complex1
        
         String [] arr = new String [46];
         
-        int counter = 0;
-        int random=0;
-        while(counter < 100)
-        {
-            counter++;
-       
-        System.out.println("random: "+random);
-        }
-        
-        
         System.out.println("language in complex1: "+language);
         
         if(language.equalsIgnoreCase("English"))
@@ -154,8 +142,6 @@ public class Complex1
             {
               arr = zeile.split(";");
               System.out.println("this is line: "+zeile);
-               
-              
               
               if (Integer.parseInt(arr[1])== 0 && Integer.parseInt(arr[2])== 0) {  //Columns B and C equals 0?
                   
@@ -210,70 +196,27 @@ public class Complex1
                                 chi1 = Math.round(Double.parseDouble(arr[30])*100)/100.0;
                                 df1 = Integer.parseInt(arr[39]);
                                 
-                                random = (int)(Math.random()*20);
-                                
                           //      System.out.println("--"+arr[0]+"."+arr[1]+" "+arr[3]);
                                if (comparisonname.toLowerCase().contains("sensitivity")) {
                                    Double pOverall = Math.round(Double.parseDouble(arr[37])*1000)/1000.0;
                                    Double iOverall = Math.round(Double.parseDouble(arr[38])*1000)/1000.0;
                                    Double chiOverall = Math.round(Double.parseDouble(arr[36])*1000)/1000.0;
                                    if (pOverall < 0.5 ){
-                                       random = (int)(Math.random()*20);
-                                       paragraph = doc.createElement("P");
-                                       if(random<10)
-                                       {
-                                           paragraph.appendChild(doc.createTextNode("Overall result for subgroups: "+"("+effectMeasure2+" "+effectEst2+" CI "+ciStart2+" to "+ciEnd2+", Analysis "+analysisnr+"). There was a statistically significant difference between the subgroups of trials (Chi2="+chiOverall+"; df="+df1+"; P="+pOverall+"). ")); 
-                                       }
-                                       else
-                                       {  
-                                            System.out.println("in else dinna2");
-                                           paragraph.appendChild(doc.createTextNode("Overall result for subgroups: "+"("+effectMeasure2+" "+effectEst2+" CI "+ciStart2+" to "+ciEnd2+", Analysis "+analysisnr+"). There was a statistically significant difference between the subgroups of trials (Chi2="+chiOverall+"; df="+df1+"; P="+pOverall+"). ")); 
-                                       }
-                                       
+                                       paragraph = doc.createElement("P"); 
+                                       paragraph.appendChild(doc.createTextNode("Overall result for subgroups: "+"("+effectMeasure2+" "+effectEst2+" CI "+ciStart2+" to "+ciEnd2+", Analysis "+analysisnr+"). There was a statistically significant difference between the subgroups of trials (Chi2="+chiOverall+"; df="+df1+"; P="+pOverall+"). ")); 
                                        subsection2.appendChild(paragraph);
                                    }
-                                    
                                    else {
-                                       random = (int)(Math.random()*20);
                                        paragraph = doc.createElement("P"); 
-                                        if(random<10)
-                                       {
-                                            paragraph.appendChild(doc.createTextNode("Overall result for subgroups: "+"("+effectMeasure2+" "+effectEst2+" CI "+ciStart2+" to "+ciEnd2+", Analysis "+analysisnr+"). There was no significant difference between the subgroups of trials (Chi2="+chiOverall+"; df="+df1+"; P="+pOverall+"). ")); 
-                                       }
-                                       else
-                                       {
-                                            System.out.println("in else dinna2");
-                                           paragraph.appendChild(doc.createTextNode("Overall result for subgroups: "+"("+effectMeasure2+" "+effectEst2+" CI "+ciStart2+" to "+ciEnd2+", Analysis "+analysisnr+"). There was no significant difference between the subgroups of trials (Chi2="+chiOverall+"; df="+df1+"; P="+pOverall+"). ")); 
-                                       }
-                                      
+                                       paragraph.appendChild(doc.createTextNode("Overall result for subgroups: "+"("+effectMeasure2+" "+effectEst2+" CI "+ciStart2+" to "+ciEnd2+", Analysis "+analysisnr+"). There was no significant difference between the subgroups of trials (Chi2="+chiOverall+"; df="+df1+"; P="+pOverall+"). ")); 
                                        subsection2.appendChild(paragraph);
                                    }
                                    if (iOverall >= 30 && iOverall <= 50) {
-                                       random = (int)(Math.random()*20);
-                                        if(random<10)
-                                       {
-                                            paragraph.appendChild(doc.createTextNode("This finding had moderate levels of heterogeneity (I2="+iOverall+"%)."));  
-                                       }
-                                       else
-                                       {
-                                            System.out.println("in else dinna2");
-                                            paragraph.appendChild(doc.createTextNode("This finding had moderate levels of heterogeneity (I2="+iOverall+"%)."));  
-                                       }
-                                    
+                                     paragraph.appendChild(doc.createTextNode("This finding had moderate levels of heterogeneity (I2="+iOverall+"%)."));  
                                      subsection2.appendChild(paragraph);
                                     }
                                    else if (iOverall > 50){
-                                       random = (int)(Math.random()*20);
-                                        if(random<10)
-                                       {
-                                           paragraph.appendChild(doc.createTextNode("This finding had important levels of heterogeneity (I2="+iOverall+"%)."));
-                                       }
-                                       else
-                                       {
-                                           System.out.println("in else dinna2");
-                                           paragraph.appendChild(doc.createTextNode("This finding had important levels of heterogeneity (I2="+iOverall+"%)."));
-                                       }
-                                   
+                                   paragraph.appendChild(doc.createTextNode("This finding had important levels of heterogeneity (I2="+iOverall+"%)."));
                                    subsection2.appendChild(paragraph);
                                     }
                                }
@@ -288,7 +231,7 @@ public class Complex1
                               studyname2 = arr[3];
                               System.out.println("studyname 2: "+studyname2);
                               count2++;
-                              zeile = br.readLine();                        
+                              zeile = br.readLine();
                               if (zeile != null){
                                   arr = zeile.split(";");
                               }
@@ -317,178 +260,61 @@ public class Complex1
                                 // ab hier Trennung
                                 
                                 paragraph = doc.createElement("P");
-                                                                
                                 if (comparisonname.contains("versus")){
                                     
                                     System.out.println("in versus dinna if");
                                     
                                     if (ciStart2 < 1 && ciEnd2 > 1){
-                                        random = (int)(Math.random()*20);
                                         if (count2 == 1) {
-                                             if(random<10)
-                                       {
-                                           paragraph.appendChild(doc.createTextNode("For this outcome we identified one relevant trial (n="+total2+") ("+studyname2+"). We found no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));  
-                                       }
-                                       else
-                                       {
-                                           System.out.println("in else dinna1");
-                                           paragraph.appendChild(doc.createTextNode("For this outcome we identified one relevant trial (n="+total2+") ("+studyname2+"). This one study did not report evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));  
-                                       }
-                                             
+                                           paragraph.appendChild(doc.createTextNode("For this outcome we only found one relevant trial (n="+total2+") ("+studyname2+"). There was no significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));    
                                         }
                                         else if (count2 <= 10) {
-                                            random = (int)(Math.random()*20);
-                                             if(random<10)
-                                       {
-                                           paragraph.appendChild(doc.createTextNode("For this outcome we identified "+countstring2+" relevant trials (n="+total2+"). There was no significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
-                                       }
-                                       else
-                                       {
-                                           System.out.println("in else dinna1");
-                                           paragraph.appendChild(doc.createTextNode("We identified "+countstring2+" relevant trials (n="+total2+")but no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
-                                       }
-                                           
-                                        }
-                                        
-                                        else 
-                                        {
-                                            random = (int)(Math.random()*20); 
-                                            if (random < 10) 
-                                            {
-                                                 paragraph.appendChild(doc.createTextNode("For this outcome we identified "+count2+" relevant trials (n="+total2+"). We found no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
-
-                                            } else 
-                                            {
-                                                System.out.println("in else dinna1");
-                                                paragraph.appendChild(doc.createTextNode("We identified "+count2+" relevant trials (n="+total2+") but no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
-                                            }
-                                            
-                                            
-                                        }
-                                    }
-                                    else 
-                                    {
-                                        random = (int)(Math.random()*20);
-                                        if (count2 == 1) 
-                                        {
-                                            if (random < 10) 
-                                            {
-                                                paragraph.appendChild(doc.createTextNode("For this outcome we identified one relevant trial (n="+total2+") ("+studyname2+"). We found evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));    
-                                            } else 
-                                            {
-                                                System.out.println("in else dinna1");
-                                                paragraph.appendChild(doc.createTextNode("We identified one relevant trial  (n="+total2+") ("+studyname2+"). This one study reported evidence of a clear difference between  "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));    
-                                            }
-                                           
-                                        }
-                                        else if (count2 <= 10) {
-                                        random = (int)(Math.random()*20);
-                                            if (random < 10) 
-                                            {
-                                                paragraph.appendChild(doc.createTextNode("For this outcome we identified "+countstring2+" relevant trials (n="+total2+"). We found evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
-                                            } 
-                                            else 
-                                            {
-                                                System.out.println("in else dinna1");
-                                                 paragraph.appendChild(doc.createTextNode("Overall, the "+countstring2+" relevant trials (n="+total2+") report evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
-                                            }
-                                            
+                                           paragraph.appendChild(doc.createTextNode("For this outcome we found "+countstring2+" relevant trials (n="+total2+"). There was no significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
                                         }
                                         else {
-                                            random = (int)(Math.random()*20);
-                                            if (random < 10) 
-                                            {
-                                                paragraph.appendChild(doc.createTextNode("For this outcome we found "+count2+" relevant trials (n="+total2+"). We found no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
-                                            } 
-                                            else 
-                                            {
-                                                System.out.println("in else dinna1");
-                                                paragraph.appendChild(doc.createTextNode("We identified "+count2+" relevant trials (n="+total2+") and no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
-                                            }
-                                             
+                                             paragraph.appendChild(doc.createTextNode("For this outcome we found "+count2+" relevant trials (n="+total2+"). There was no significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
+                                        }
+                                    }
+                                    else {
+                                        if (count2 == 1) {
+                                           paragraph.appendChild(doc.createTextNode("For this outcome we only found one relevant trial (n="+total2+") ("+studyname2+"). There was a statistically significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));    
+                                        }
+                                        else if (count2 <= 10) {
+                                           paragraph.appendChild(doc.createTextNode("For this outcome we found "+countstring2+" relevant trials (n="+total2+"). There was a statistically significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
+                                        }
+                                        else {
+                                             paragraph.appendChild(doc.createTextNode("For this outcome we found "+count2+" relevant trials (n="+total2+"). There was a statistically significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
                                         }
                                     }
                                     subsection2.appendChild(paragraph);
                                     paragraph.appendChild(doc.createTextNode(" ("+effectMeasure2Short+" "+effectEst2+" CI "+ciStart2+" to "+ciEnd2+", Analysis "+analysisnr+"). "));
                                     subsection2.appendChild(paragraph);
-                               
                                 }
                                 else if (comparisonname.contains("vs")){ //contains "vs"
                                     System.out.println("in versus dinna else if");
-                           
+                                    
                                     if (ciStart2 < 1 && ciEnd2 > 1){
-                                    if (count2 == 1) 
-                                    {
-                                        random = (int)(Math.random()*20);
-                                       if (random < 10) 
-                                       {
-                                            paragraph.appendChild(doc.createTextNode("For this outcome we identified one relevant trial (n="+total2+") ("+studyname2+"). We found no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));    
-                                       } 
-                                       else 
-                                       {
-                                           System.out.println("in else dinna1");
-                                            paragraph.appendChild(doc.createTextNode("We identified one relevant trial (n="+total2+") ("+studyname2+") and no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));    
-                                       }
-                                        
+                                    if (count2 == 1) {
+                                       paragraph.appendChild(doc.createTextNode("For this outcome we only found one relevant trial (n="+total2+") ("+studyname2+"). There was no significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));    
                                     }
-                                    else if (count2 <= 10) 
-                                    {
-                                        random = (int)(Math.random()*20);
-                                        if (random < 10)                                             
-                                        {
-                                            paragraph.appendChild(doc.createTextNode("For this outcome we identified "+countstring2+" relevant trials (n="+total2+"). We found no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
-                                        } else {
-                                            System.out.println("in else dinna1");
-                                            paragraph.appendChild(doc.createTextNode("We identified "+countstring2+" relevant trials (n="+total2+") and no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
-                                        }
-                                       
+                                    else if (count2 <= 10) {
+                                       paragraph.appendChild(doc.createTextNode("For this outcome we found "+countstring2+" relevant trials (n="+total2+"). There was no significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
                                     }
                                     else {
-                                        random = (int)(Math.random()*20);
-                                        if (random < 10) {
-                                            paragraph.appendChild(doc.createTextNode("For this outcome we identified "+count2+" relevant trials (n="+total2+"). We found no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
-                                            } else {
-                                            System.out.println("in else dinna1");
-                                            paragraph.appendChild(doc.createTextNode("We identified "+count2+" relevant trials (n="+total2+") and no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
-                                            }
-                                         
+                                         paragraph.appendChild(doc.createTextNode("For this outcome we found "+count2+" relevant trials (n="+total2+"). There was no significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
                                     }
                                     }
                                     else {
-                                      
                                         if (count2 == 1) {
-                                            random = (int)(Math.random()*20);
-                                            if (random < 10) {
-                                                paragraph.appendChild(doc.createTextNode("For this outcome we identified one relevant trial (n="+total2+") ("+studyname2+"). We found evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));    
-                                            } else {
-                                                System.out.println("in else dinna1");
-                                                paragraph.appendChild(doc.createTextNode("We identified one relevant trial (n="+total2+") ("+studyname2+") reporting evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));    
-                                            }
-                                           
+                                           paragraph.appendChild(doc.createTextNode("For this outcome we only found one relevant trial (n="+total2+") ("+studyname2+"). There was a statistically significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));    
                                         }
                                         else if (count2 <= 10) {
-                                            random = (int)(Math.random()*20);
-                                            if (random < 10) {
-                                                paragraph.appendChild(doc.createTextNode("For this outcome we found "+countstring2+" relevant trials (n="+total2+"). We found evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
-                                            } else {
-                                                System.out.println("in else dinna1");
-                                                paragraph.appendChild(doc.createTextNode("We identified "+countstring2+" relevant trials (n="+total2+") reporting evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
-                                            }
-                                           
+                                           paragraph.appendChild(doc.createTextNode("For this outcome we found "+countstring2+" relevant trials (n="+total2+"). There was a statistically significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
                                         }
                                         else {
-                                            random = (int)(Math.random()*20);
-                                            if (random < 10) 
-                                            {
-                                                paragraph.appendChild(doc.createTextNode("For this outcome we found "+count2+" relevant trials (n="+total2+"). We found evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
-                                            } else {
-                                                System.out.println("in else dinna1");
-                                                paragraph.appendChild(doc.createTextNode("We identified "+count2+" relevant trials (n="+total2+") reporting evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
-                                            }
-                                             
+                                             paragraph.appendChild(doc.createTextNode("For this outcome we found "+count2+" relevant trials (n="+total2+"). There was a statistically significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
                                         }
                                     }
-                                   
                                     subsection2.appendChild(paragraph);
                                     paragraph.appendChild(doc.createTextNode(" ("+effectMeasure2Short+" "+effectEst2+" CI "+ciStart2+" to "+ciEnd2+", Analysis "+analysisnr+"). "));
                                     subsection2.appendChild(paragraph);
@@ -520,51 +346,20 @@ public class Complex1
                                     System.out.println("in versus dinna else");
                                     
                                     if (count2 == 1){
-                                        random = (int)(Math.random()*20);
-                                        if (random < 10) {
-                                            paragraph.appendChild(doc.createTextNode(" (1 RCT, n="+total2+", "+effectMeasure2Short+" "+effectEst2+" CI "+ciStart2+" to "+ciEnd2+", Analysis "+analysisnr+"). "));
-                                            } else {
-                                            System.out.println("in else dinna1");
-                                            paragraph.appendChild(doc.createTextNode(" (1 RCT, n="+total2+", "+effectMeasure2Short+" "+effectEst2+" CI "+ciStart2+" to "+ciEnd2+", Analysis "+analysisnr+"). "));
-                                            }
-                                    
+                                    paragraph.appendChild(doc.createTextNode(" (1 RCT, n="+total2+", "+effectMeasure2Short+" "+effectEst2+" CI "+ciStart2+" to "+ciEnd2+", Analysis "+analysisnr+"). "));
                                     subsection2.appendChild(paragraph);
                                     }
                                     else {
-                                        random = (int)(Math.random()*20);
-                                        if (random < 10) {
-                                            paragraph.appendChild(doc.createTextNode(" ("+count2+" RCTs, n="+total2+", "+effectMeasure2Short+" "+effectEst2+" CI "+ciStart2+" to "+ciEnd2+", Analysis "+analysisnr+"). "));
-                                            } else {
-                                            System.out.println("in else dinna1");
-                                            paragraph.appendChild(doc.createTextNode(" ("+count2+" RCTs, n="+total2+", "+effectMeasure2Short+" "+effectEst2+" CI "+ciStart2+" to "+ciEnd2+", Analysis "+analysisnr+"). "));
-                                            }
-                                    
+                                    paragraph.appendChild(doc.createTextNode(" ("+count2+" RCTs, n="+total2+", "+effectMeasure2Short+" "+effectEst2+" CI "+ciStart2+" to "+ciEnd2+", Analysis "+analysisnr+"). "));
                                     subsection2.appendChild(paragraph);   
                                     }
                                 }
                                 if (i1 >= 30 && i1 <= 50 && count2 > 1) {
-                                 
-                                    if (random < 10) {
-                                        random = (int)(Math.random()*20);
-                                        paragraph.appendChild(doc.createTextNode("This outcome had moderate levels of heterogeneity (Chi2="+chi1+"; df="+df1+"; P="+p1+"; I2="+i1+"%)."));  
-                                            } else {
-                                        System.out.println("in else dinna1");
-                                           paragraph.appendChild(doc.createTextNode("This outcome had moderate levels of heterogeneity (Chi2="+chi1+"; df="+df1+"; P="+p1+"; I2="+i1+"%)."));  
-                                            }
-                                    
+                                     paragraph.appendChild(doc.createTextNode("This outcome had moderate levels of heterogeneity (Chi2="+chi1+"; df="+df1+"; P="+p1+"; I2="+i1+"%)."));  
                                 }
-                                else if (i1 > 50 && count2 > 1)
-                                {
-                                   
-                                    
-                                        if (random < 10) {
-                                            random = (int)(Math.random()*20);
-                                            paragraph.appendChild(doc.createTextNode("This outcome had important levels of heterogeneity (Chi2="+chi1+"; df="+df1+"; P="+p1+"; I2="+i1+"%)."));
-                                            } else {
-                                            System.out.println("in else dinna1");
-                                            paragraph.appendChild(doc.createTextNode("This outcome had important levels of heterogeneity (Chi2="+chi1+"; df="+df1+"; P="+p1+"; I2="+i1+"%)."));
-                                            }
-                                    
+                                else
+                                    if (i1 > 50 && count2 > 1){
+                                    paragraph.appendChild(doc.createTextNode("This outcome had important levels of heterogeneity (Chi2="+chi1+"; df="+df1+"; P="+p1+"; I2="+i1+"%)."));
                                 }
                                 subsection2.appendChild(paragraph);
                             //    System.out.println (">>Total study count: "+count2); 
@@ -572,8 +367,10 @@ public class Complex1
                        
                       } subgroup = false;
                   }
-                  else if (Integer.parseInt(arr[1])!= 0 && Integer.parseInt(arr[2])!= 0 && noTotals == false){       //Column B and C not equals 0
-                         
+                  else
+                      if (Integer.parseInt(arr[1])!= 0 && Integer.parseInt(arr[2])!= 0 && noTotals == false){       //Column B and C not equals 0
+                          
+                          
                           if (!arr[4].equals("")){                  // Column E not empty
                           
                                System.out.println("in else if arr[2] if");
@@ -588,7 +385,6 @@ public class Complex1
                             attr3.setValue("5");
                             heading3.setAttributeNode(attr3);     
                          //   System.out.println("----"+arr[0]+"."+arr[1]+"."+arr[2]+" "+ arr[3]);
-                            random = (int)(Math.random()*20);
                             total = (Integer.parseInt(arr[18]) + Integer.parseInt(arr[22]));
                             effectEst = Math.round(Double.parseDouble(arr[25])*100)/100.0;
                             ciStart = Math.round(Double.parseDouble(arr[27])*100)/100.0;
@@ -606,8 +402,7 @@ public class Complex1
                             zeile = br.readLine();
                           }
                           
-                          else 
-                          {
+                          else {
                               
                                System.out.println("in else if arr[2] else "+comparisonname);
                             count = 0;
@@ -641,9 +436,7 @@ public class Complex1
                                     case "Std. Mean Difference": effectMeasureShort = "SMD"; break;
                                 }
                                 if (comparisonname.contains("versus")||comparisonname.contains("Versus")  // contains "versus" & "VERSUS" &Versus! (contains work only for the excact term in the quotation!)
-                                        ||comparisonname.contains("VERSUS"))
-                                {
-                                    
+                                        ||comparisonname.contains("VERSUS")){
                                     paragraph2 = doc.createElement("P"); 
                                     if (ciStart < 1 && ciEnd > 1){
                                         String lowerCase="";
@@ -657,80 +450,34 @@ public class Complex1
                                            System.out.println("in catch new: "+e.toString());     
                                          }
                                         
-                                        if (count == 1) 
-                                        {
-                                            random = (int)(Math.random()*20);
-                                            if (random < 10) {
-                                                paragraph2.appendChild(doc.createTextNode("In this subgroup we identified one relevant trial (n="+total+") ("+studyname+"). We found no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));    
-                                            } else {
-                                                System.out.println("in else dinna");
-                                                paragraph2.appendChild(doc.createTextNode("Within this subgroup we identified one relevant trial (n="+total+") ("+studyname+") reporting no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));    
-                                            }
-                                            
+                                        if (count == 1) {
+                                           paragraph2.appendChild(doc.createTextNode("In this subgroup we only found one relevant trial (n="+total+") ("+studyname+"). There was no significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));    
                                         }
                                         else if (count <= 10) {
-                                            random = (int)(Math.random()*20);
-                                            if (random < 10) {
-                                                paragraph2.appendChild(doc.createTextNode("Within this subgroup we identified "+countstring+" relevant trials (n="+total+") reporting no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
-                                            } else {
-                                                System.out.println("in else dinna");
-                                                paragraph2.appendChild(doc.createTextNode("In this subgroup we identified "+countstring+" relevant trials (n="+total+"). We found no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
-                                            }
-                                           
+                                           paragraph2.appendChild(doc.createTextNode("In this subgroup we found "+countstring+" relevant trials (n="+total+"). There was no significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
                                         }
                                         else {
-                                            random = (int)(Math.random()*20);
-                                           if (random < 10) {
-                                                paragraph2.appendChild(doc.createTextNode("Within this subgroup we identified "+count+" relevant trials (n="+total+") reporting no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
-                                            } else {
-                                               System.out.println("in else dinna");
-                                                paragraph2.appendChild(doc.createTextNode("In this subgroup we identified "+count+" relevant trials (n="+total+"). We found no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
-                                            }
-                                            
+                                             paragraph2.appendChild(doc.createTextNode("In this subgroup we found "+count+" relevant trials (n="+total+"). There was no significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
                                         } 
                                     }
                                     else {
                                          if (count == 1) {
-                                             random = (int)(Math.random()*20);
-                                             if (random < 10) {
-                                                 paragraph2.appendChild(doc.createTextNode("In this subgroup we identified one relevant trial (n="+total+") ("+studyname+"). We found evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));    
-                                            } else {
-                                                 System.out.println("in else dinna");
-                                                 paragraph2.appendChild(doc.createTextNode("Within this subgroup we identified one relevant trial (n="+total+") ("+studyname+") reporting evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
-                                            }
-  
+                                           paragraph2.appendChild(doc.createTextNode("In this subgroup we only found one relevant trial (n="+total+") ("+studyname+"). There was a statistically significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));    
                                         }
                                         else if (count <= 10) {
-                                            random = (int)(Math.random()*20);
-                                              if (random < 10) {
-                                                 paragraph2.appendChild(doc.createTextNode("In this subgroup we identified "+countstring+" relevant trials (n="+total+") which found evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
-                                            } else {
-                                                  System.out.println("in else dinna");
-                                                 paragraph2.appendChild(doc.createTextNode("Within this subgroup we identified  "+countstring+" relevant trials (n="+total+") reporting evidence of a clear difference between    "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
-                                            }
-        
+                                           paragraph2.appendChild(doc.createTextNode("In this subgroup we found "+countstring+" relevant trials (n="+total+"). There was a statistically significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
                                         }
                                         else {
-                                            random = (int)(Math.random()*20);
-                                            if (random < 10) {
-                                                
-                                                 paragraph2.appendChild(doc.createTextNode("In this subgroup we identified "+count+" relevant trials (n="+total+") which found evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
-                                            } else {
-                                                System.out.println("in else dinna");
-                                                 paragraph2.appendChild(doc.createTextNode("Within this subgroup we identified  "+count+" relevant trials (n="+total+") reporting evidence of a clear difference between    "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
-                                            }
-                                          
+                                           paragraph2.appendChild(doc.createTextNode("In this subgroup we found "+count+" relevant trials (n="+total+"). There was a statistically significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("versus"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("versus")+7)).toLowerCase()));
                                         } 
                                     }
                                     subsection3.appendChild(paragraph2);
                                     paragraph2.appendChild(doc.createTextNode(" ("+effectMeasureShort+" "+effectEst+" CI "+ciStart+" to "+ciEnd+", Analysis "+analysisnr+"). "));     
                                     subsection3.appendChild(paragraph2);
-                                    
                                 }
                                 else if (comparisonname.contains("vs")||comparisonname.contains("VS")
                                         ||comparisonname.contains("Vs"))  // contains "vs" & "VS" & Vs! (contains work only for the excact term in the quotation!)
                                 { 
-                              
                                      String lowerCase="";   // this is for stopping an error because of the "lowerCase" function. 
                                         try
                                         {
@@ -745,69 +492,25 @@ public class Complex1
                                     paragraph2 = doc.createElement("P"); 
                                     if (ciStart < 1 && ciEnd > 1){
                                         
-                                        
                                         if (count == 1) {
-                                            random = (int)(Math.random()*20);
-                                            if (random < 10) {
-                                                 paragraph2.appendChild(doc.createTextNode("In this subgroup we identified one relevant trial (n="+total+") ("+studyname+"). This single study found no evidence of a clear difference between  "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));    
-                                            } else {
-                                                System.out.println("in else dinna");
-                                                 paragraph2.appendChild(doc.createTextNode("In this subgroup we identified one relevant trial (n="+total+") ("+studyname+") reporting no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));    
-                                            }
-                                          
+                                           paragraph2.appendChild(doc.createTextNode("In this subgroup we only found one relevant trial (n="+total+") ("+studyname+"). There was no significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));    
                                         }
                                         else if (count <= 10) {
-                                            random = (int)(Math.random()*20);
-                                            if (random < 10) {
-                                                paragraph2.appendChild(doc.createTextNode("In this subgroup we identified "+countstring+" relevant trials (n="+total+"). There was no significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
-                                            } else {
-                                                System.out.println("in else dinna");
-                                                paragraph2.appendChild(doc.createTextNode("In this subgroup we found "+countstring+" relevant trials (n="+total+"). There was no significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
-                                            }
-                                           
+                                           paragraph2.appendChild(doc.createTextNode("In this subgroup we found "+countstring+" relevant trials (n="+total+"). There was no significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
                                         }
                                         else {
-                                            random = (int)(Math.random()*20);
-                                            if (random < 10) {
-                                                paragraph2.appendChild(doc.createTextNode("In this subgroup we identified "+count+" relevant trials (n="+total+") which found no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
-                                            } else {
-                                                System.out.println("in else dinna");
-                                                paragraph2.appendChild(doc.createTextNode("Within this subgroup we identified "+count+" relevant trials (n="+total+") reporting no evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
-                                            }
-                                             
+                                             paragraph2.appendChild(doc.createTextNode("In this subgroup we found "+count+" relevant trials (n="+total+"). There was no significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
                                         } 
                                     }
                                     else {
                                          if (count == 1) {
-                                             random = (int)(Math.random()*20);
-                                             if (random < 10) {
-                                                 
-                                                 paragraph2.appendChild(doc.createTextNode("In this subgroup we identified one relevant trial (n="+total+") ("+studyname+"). This single study found evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));    
-                                            } else {
-                                                 System.out.println("in else dinna");
-                                                 paragraph2.appendChild(doc.createTextNode("Within this subgroup we identified one relevant trial (n="+total+") ("+studyname+") reporting evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));    
-                                            }
-                                           
+                                           paragraph2.appendChild(doc.createTextNode("In this subgroup we only found one relevant trial (n="+total+") ("+studyname+"). There was a statistically significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));    
                                         }
                                         else if (count <= 10) {
-                                            random = (int)(Math.random()*20);
-                                            if (random < 10) {
-                                                paragraph2.appendChild(doc.createTextNode("In this subgroup we identified "+countstring+" relevant trials (n="+total+") with evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
-                                            } else {
-                                                System.out.println("in else dinna");
-                                                paragraph2.appendChild(doc.createTextNode("In this subgroup we identified "+countstring+" relevant trials (n="+total+") reporting evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
-                                            }
-                                           
+                                           paragraph2.appendChild(doc.createTextNode("In this subgroup we found "+countstring+" relevant trials (n="+total+"). There was a statistically significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
                                         }
                                         else {
-                                            random = (int)(Math.random()*20);
-                                            if (random < 10) {
-                                                paragraph2.appendChild(doc.createTextNode("In this subgroup we found "+count+" relevant trials (n="+total+") with evidence of a clear difference between  "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
-                                            } else {
-                                                System.out.println("in else dinna");
-                                                paragraph2.appendChild(doc.createTextNode("Within this subgroup we identified "+count+" relevant trials (n="+total+") reporting evidence of a clear difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
-                                            }
-                                           
+                                           paragraph2.appendChild(doc.createTextNode("In this subgroup we found "+count+" relevant trials (n="+total+"). There was a statistically significant difference between "+(comparisonname.substring(0, comparisonname.indexOf("vs"))).toLowerCase()+"and "+(comparisonname.substring(comparisonname.indexOf("vs")+3)).toLowerCase()));
                                         } 
                                     }
                                     subsection3.appendChild(paragraph2);
@@ -816,6 +519,7 @@ public class Complex1
                                 } 
                                 else { // Sensitivity Analysis
                                     
+                                     System.out.println("in else sensitivity analysis");
                                     paragraph2 = doc.createElement("P"); 
 //                                    if (ciStart < 1 && ciEnd > 1){
 //                                        if (count == 1) {
@@ -841,48 +545,21 @@ public class Complex1
 //                                    }
 //                                    subsection3.appendChild(paragraph2);
                                     if (count == 1){
-                                        random = (int)(Math.random()*20);
-                                        if (random < 10) {
-                                            paragraph2.appendChild(doc.createTextNode(" (1 RCT, n="+total+", "+effectMeasureShort+" "+effectEst+" CI "+ciStart+" to "+ciEnd+", Analysis "+analysisnr+"). "));     
-                                            } else {
-                                            System.out.println("in else dinna");
-                                            paragraph2.appendChild(doc.createTextNode(" (1 RCT, n="+total+", "+effectMeasureShort+" "+effectEst+" CI "+ciStart+" to "+ciEnd+", Analysis "+analysisnr+"). "));     
-                                            }
-                                        
+                                        paragraph2.appendChild(doc.createTextNode(" (1 RCT, n="+total+", "+effectMeasureShort+" "+effectEst+" CI "+ciStart+" to "+ciEnd+", Analysis "+analysisnr+"). "));     
                                         subsection3.appendChild(paragraph2);
                                     }
                                     else {
-                                        random = (int)(Math.random()*20);
-                                        if (random < 10) {
-                                             paragraph2.appendChild(doc.createTextNode(" ("+count+" RCTs, n="+total+", "+effectMeasureShort+" "+effectEst+" CI "+ciStart+" to "+ciEnd+", Analysis "+analysisnr+"). "));     
-                                            } else {
-                                            System.out.println("in else dinna");
-                                             paragraph2.appendChild(doc.createTextNode(" ("+count+" RCTs, n="+total+", "+effectMeasureShort+" "+effectEst+" CI "+ciStart+" to "+ciEnd+", Analysis "+analysisnr+"). "));     
-                                            }
-                                       
+                                        paragraph2.appendChild(doc.createTextNode(" ("+count+" RCTs, n="+total+", "+effectMeasureShort+" "+effectEst+" CI "+ciStart+" to "+ciEnd+", Analysis "+analysisnr+"). "));     
                                         subsection3.appendChild(paragraph2);
                                     }
                                 }
                                 if (i2 >= 30 && i2 <= 50 && count > 1) {
-                            random = (int)(Math.random()*20);
-                                    if (random < 10) {
-                                            paragraph2.appendChild(doc.createTextNode("This subgroup had moderate levels of heterogeneity (Chi2="+chi2+"; df="+df2+"; P="+p2+"; I2="+i2+"%)."));
-                                            } else {
-                                        System.out.println("in else dinna");
-                                            paragraph2.appendChild(doc.createTextNode("This subgroup had moderate levels of heterogeneity (Chi2="+chi2+"; df="+df2+"; P="+p2+"; I2="+i2+"%)."));
-                                            }
-                                     
+                                     paragraph2.appendChild(doc.createTextNode("This subgroup had moderate levels of heterogeneity (Chi2="+chi2+"; df="+df2+"; P="+p2+"; I2="+i2+"%)."));
                                     subsection3.appendChild(paragraph2);
                                 }
-                                else if (i2 > 50 && count > 1){
-                                    random = (int)(Math.random()*20);
-                                        if (random < 10) {
-                                            paragraph2.appendChild(doc.createTextNode("This subgroup had important levels of heterogeneity (Chi2="+chi2+"; df="+df2+"; P="+p2+"; I2="+i2+"%)."));
-                                            } else {
-                                            System.out.println("in else dinna");
-                                            paragraph2.appendChild(doc.createTextNode("This subgroup had important levels of heterogeneity (Chi2="+chi2+"; df="+df2+"; P="+p2+"; I2="+i2+"%)."));
-                                            }
-                                    
+                                else
+                                    if (i2 > 50 && count > 1){
+                                    paragraph2.appendChild(doc.createTextNode("This subgroup had important levels of heterogeneity (Chi2="+chi2+"; df="+df2+"; P="+p2+"; I2="+i2+"%)."));
                                     subsection3.appendChild(paragraph2);
                                 }
                             
@@ -892,7 +569,6 @@ public class Complex1
                           }
                           subgroup = true;   
                       }
-
                       else if (noTotals == true){
                           paragraph = doc.createElement("P");
                           paragraph.appendChild(doc.createTextNode("*--- Missing data in this subsection. Data was not totaled. ---*"));
@@ -1490,7 +1166,7 @@ public void deleteSpecialChars(String file) throws IOException
       Reader fr = new InputStreamReader(new FileInputStream(file), "UTF-8");
       BufferedReader br = new BufferedReader(fr);
        
-      Writer fw = new OutputStreamWriter(new FileOutputStream(file+"UpdatedVersion.rm5"), "ISO-8859-1");
+      Writer fw = new OutputStreamWriter(new FileOutputStream(file+"newFile.rm5"), "ISO-8859-1");
       String line="";
       
       
@@ -1502,7 +1178,7 @@ public void deleteSpecialChars(String file) throws IOException
           {
               line = line.replace("Ã¼", "ü");
               System.out.println("dinna if ue: "+line);  
-          }      
+          }
           if(line.contains("¤"))
            {
                line = line.replace("¤", "ä");
@@ -1891,9 +1567,7 @@ public void deleteSpecialChars(String file) throws IOException
       line = line.replace(",Ã", "");
       line = line.replace(",¼", "");      
       line = line.replace("Ã‚Â", "");
-      line = line.replace("‚±","±");      
-      line = line.replace("ï¿½","'");  
-      
+      line = line.replace("‚±","±");         
       
       fw.append(line);
       
@@ -1902,22 +1576,14 @@ public void deleteSpecialChars(String file) throws IOException
       br.close();
       fr.close();
       
-      System.out.println("path "+file); 
+      
      File file2 = new File(file);        
-    boolean success = file2.delete(); 
-    
-     if(success==false)
-     {
-         final JOptionPane pane = new JOptionPane("Error while loading the file. Please rename the just created file with the name /n "
-                 + "'VersionWithChecklist', restart the program, and use this file instead.");
-             final JDialog d = pane.createDialog(null, "ERROR");
-             d.setLocation(450, 430);
-             d.setVisible(true);
-     }
+     boolean success = file2.delete();        
      System.out.println(success);        
-     
-     file2 = new File(file.substring(0,file.length()-4)+"UpdatedVersion.rm5");        
-     file2.renameTo(new File(file)); 
+     file2 = new File(file+"newFile.rm5");        
+     file2.renameTo(new File(file));          
+        
+   
   }
 
 }

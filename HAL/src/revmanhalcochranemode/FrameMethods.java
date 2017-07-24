@@ -4,9 +4,7 @@
  */
 package revmanhalcochranemode;
 
-import java.awt.Color;
 import java.awt.Desktop;
-import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -22,15 +20,11 @@ import java.util.Date;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.
-        TransformerFactory;
+import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Attr;
@@ -56,7 +50,6 @@ public class FrameMethods extends javax.swing.JFrame {
     private Element headingTemp2;
     private Element italicTemp;
     private Element subsectionTemp2;
-    private boolean btnPressed=false;
     
     private File openTextfile;
     
@@ -68,12 +61,8 @@ public class FrameMethods extends javax.swing.JFrame {
     {
         initComponents();
         path=p;
-        this.setTitle("RevMan Hal - Protocol - Methods");
-        this.setLocation(300, 150);
-        jPanel1.setBackground(new Color(226,226,226));
-        this.setBackground(new Color(226,226,226));
+        this.setLocation(250, 250);
         this.run();
-        
     }
 
     /**
@@ -96,16 +85,13 @@ public class FrameMethods extends javax.swing.JFrame {
         btnOpen = new javax.swing.JButton();
         btnAdd = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
-        btn_exit1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/hal.png"))); // NOI18N
 
-        btn_return.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btn_return.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/back.png"))); // NOI18N
-        btn_return.setText(" BACK");
-        btn_return.setToolTipText("");
+        btn_return.setText("Back");
         btn_return.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_returnMouseClicked(evt);
@@ -116,18 +102,17 @@ public class FrameMethods extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 102, 249));
         jLabel2.setText("RevMan HAL ");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 28)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel3.setText("Methods");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel4.setText("<html><body>In this frame you are able to add the \"Methods\"-text to your RevMan file. You can see the text which will be added in the text area below. If you want to change anything press on \"Open Textfile\" and edit the file like you want. After saving the file you just need to press \"Refresh\" and the text will be reloaded.</body></html>");
+        jLabel4.setText("<html><body>In this frame you are able to add the \"Methods\" to your RevMan file. You can see the added text in the text area below. If you want to change anything and save it afterwards, press the button \"Save to Text File\". Otherwise just press \"Add\" and the text will be added to the RevMan file without saving the changes.</body></html>");
 
         taText.setColumns(20);
         taText.setRows(5);
         jScrollPane1.setViewportView(taText);
 
-        btnOpen.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnOpen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/TxtFileSmall.png"))); // NOI18N
+        btnOpen.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnOpen.setText("Open Textfile");
         btnOpen.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -135,30 +120,18 @@ public class FrameMethods extends javax.swing.JFrame {
             }
         });
 
-        btnAdd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/AddBtnSmall.png"))); // NOI18N
-        btnAdd.setText(" ADD");
+        btnAdd.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnAdd.setText("Add");
         btnAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAddMouseClicked(evt);
             }
         });
 
-        btnRefresh.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/refreshSmall.png"))); // NOI18N
         btnRefresh.setText("Refresh");
         btnRefresh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnRefreshMouseClicked(evt);
-            }
-        });
-
-        btn_exit1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btn_exit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/exit.png"))); // NOI18N
-        btn_exit1.setText("EXIT");
-        btn_exit1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_exit1MouseClicked(evt);
             }
         });
 
@@ -167,58 +140,56 @@ public class FrameMethods extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnOpen)
-                        .addGap(30, 30, 30)
-                        .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(btn_return, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(147, 147, 147)
-                            .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_exit1))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(161, 161, 161)
-                                .addComponent(jLabel1))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 626, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(50, 50, 50))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                                .addComponent(jLabel1)))
+                        .addGap(21, 21, 21))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btn_return)
+                        .addGap(122, 122, 122)
+                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 247, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnOpen)
+                        .addGap(69, 69, 69)
+                        .addComponent(btnRefresh)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addContainerGap()
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel1)))
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnOpen, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnRefresh))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_return, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_exit1))
-                .addGap(30, 30, 30))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_return))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         jLabel4.getAccessibleContext().setAccessibleName("<html><body>In this frame you are able to add the \"Methods\" to your RevMan file. You can see the added text in the text area below. <p></p>  If you want to change anything and save it afterwards, press the button \"Save to Text File\". Otherwise just press \"Add\" and the text will be added to the RevMan file without saving the changes.</body></html>");
@@ -227,11 +198,17 @@ public class FrameMethods extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -248,19 +225,6 @@ public class FrameMethods extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_returnMouseClicked
 
     private void btnAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddMouseClicked
-        
-        if(btnPressed==true)
-        {
-             JOptionPane.showMessageDialog(this, "You can only press the button once","Clue", JOptionPane.WARNING_MESSAGE);  
-        }
-        
-        if(taText.getText().isEmpty())
-        {
-        
-        }
-        else if(btnPressed==false)
-        {
-            btnPressed=true;
         
          SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
          Date currentTime = new Date();
@@ -625,16 +589,6 @@ public class FrameMethods extends javax.swing.JFrame {
             } else if(arAllText[m].trim().substring(4,arAllText[m].length()-4).trim().equalsIgnoreCase("Acknowledgements") 
                     ||arAllText[m].trim().substring(5,arAllText[m].length()-4).trim().equalsIgnoreCase("Acknowledgements"))// MUST BE COMPLETED..
             {
-                
-                
-                Attr attr = doc.createAttribute("NOTES");
-                String tempNotes = "<html><body><b>Acknowledgements</b><p>"
-                +"[fixed, level 1 heading]<p>"
-                +"This section should be used to acknowledge any people or organizations that the authors wish to acknowledge, including people who are not listed among the authors." 
-                +"This would include any previous authors of the Cochrane review or previous sources of support to the review, and might include the contributions of the editorial team of the CRG." 
-                +"Permission should be obtained from persons acknowledged.</body></html>";
-                
-                
                 tag = doc.getElementsByTagName("ACKNOWLEDGEMENTS").item(0);
                 tagAppend = true;
                 subsectionTemp = doc.createElement("SUBSECTION");
@@ -643,56 +597,10 @@ public class FrameMethods extends javax.swing.JFrame {
                 headingTemp = doc.createElement("HEADING");
                 headingTemp2 = doc.createElement("HEADING");
                 italicTemp = doc.createElement("ITALIC");
-                  attr.setValue(tempNotes);  
-                 Element ackn = (Element)doc.getElementsByTagName("ACKNOWLEDGEMENTS").item(0);               
-                 ackn.setAttributeNode(attr);
                
             } else if(arAllText[m].trim().substring(4,arAllText[m].length()-4).trim().equalsIgnoreCase("Contributions of authors") 
                     ||arAllText[m].trim().substring(5,arAllText[m].length()-4).trim().equalsIgnoreCase("Contributions of authors"))// MUST BE COMPLETED..
             {
-                
-                
-                Attr attr = doc.createAttribute("NOTES");
-                String tempNotes = "<html><body><b>Contributions of authors</b>\n" +
-"[fixed, level 1 heading]\n" +
-"The contributions of the current co-authors to the protocol or review should be described in this section. One author should be identified as the guarantor of the review. All authors should discuss and agree on their respective descriptions of contribution before the review is submitted for publication on the CDSR. When the review is updated, this section should be checked and revised as necessary to ensure that it is accurate and up to date.\n" +
-
-"The following potential contributions have been adapted from Yank et al. (Yank 1999). This is a suggested scheme and the section should describe what people did, rather than attempt to identify which of these categories someone’s contribution falls within. Ideally, the authors should describe their contribution in their own words." +
-"<ul><li>Conceiving the review.</li>" +
-"<li>Designing the review.</li>" +
-"<li>Coordinating the review.</li>" +
-"<li>Data collection for the review.</li>" +
-"<li>Designing search strategies.</li>" +
-"<li>Undertaking searches.</li>" +
-"<li>Screening search results.</li>" +
-"<li>Organizing retrieval of papers.</li>" +
-"<li>Screening retrieved papers against eligibility criteria.</li>" +
-"<li>Appraising quality of papers.</li>" +
-"<li>Extracting data from papers.</li>" +
-"<li>Writing to authors of papers for additional information.</li>" +
-"<li>Providing additional data about papers.</li>" +
-"<li>Obtaining and screening data on unpublished studies.</li>" +
-"<li>Data management for the review.</li>" +
-"<li>Entering data into RevMan.</li>" +
-"<li>Analysis of data.</li>" +
-"<li>Interpretation of data.</li>" +
-"<li>Providing a methodological perspective.</li>" +
-"<li>Providing a clinical perspective.</li>" +
-"<li>Providing a policy perspective.</li>" +
-"<li>Providing a consumer perspective.</li>" +
-"<li>Writing the review (or protocol).</li>" +
-"<li>Providing general advice on the review.</li>" +
-"<li>Securing funding for the review.</li>" +
-"<li>Performing previous work that was the foundation of the current review.</li></ul></body></html>";
-                
-                tempNotes = tempNotes.replaceAll("\n", "<p>");
-                
-               
-            
-                
-              
-                
-                
                tag = doc.getElementsByTagName("CONTRIBUTIONS").item(0);
                tagAppend = true;
                subsectionTemp = doc.createElement("SUBSECTION");
@@ -701,25 +609,10 @@ public class FrameMethods extends javax.swing.JFrame {
                 headingTemp = doc.createElement("HEADING");
                 headingTemp2 = doc.createElement("HEADING");
                 italicTemp = doc.createElement("ITALIC");
-                 attr.setValue(tempNotes);                 
-               Element contrib = (Element)doc.getElementsByTagName("CONTRIBUTIONS").item(0);
-               contrib.setAttributeNode(attr);
                
             } else if(arAllText[m].trim().substring(4,arAllText[m].length()-4).trim().equalsIgnoreCase("Declarations of interest") 
                     ||arAllText[m].trim().substring(5,arAllText[m].length()-4).trim().equalsIgnoreCase("Declarations of interest"))// MUST BE COMPLETED..
             {
-                
-                Attr attr = doc.createAttribute("NOTES");
-                String tempNotes = "<html><body><b>Declarations of interest</b>\n" +
-                "[fixed, level 1 heading]\n" +
-                "Authors should report any present or past affiliations or other involvement in any organization or entity with an interest in the review that might lead to a real or perceived conflict of interest. Situations that might be perceived by others as being capable of influencing a review author’s judgements include personal, political, academic and other possible conflicts, as well as financial conflicts. Authors must state if they have been involved in a study included in the review. \n" +
-                "<I>See also</I>" +
-                "<ul><li>A summary of the Collaboration’s policy on conflicts of interest appears in Chapter <u>2</u> (Section <u>2.6</u>).</li></ul>\n" +
-                "Financial conflicts of interest cause the most concern, and should be avoided, but must be reported if there are any. Any secondary interest (such as personal conflicts) that might unduly influence judgements made in a review (concerning, for example, the inclusion or exclusion of studies, assessments of the validity of included studies or the interpretation of results) should be reported.\n" +
-                "If there are no known conflicts of interest, this should be stated explicitly, for example, by writing ‘None known’.</body></html>";
-                
-                tempNotes = tempNotes.replaceAll("\n", "<p>");
-                
                 tag = doc.getElementsByTagName("CONFLICT_OF_INTEREST").item(0);
                 tagAppend = true;
                 subsectionTemp = doc.createElement("SUBSECTION");
@@ -728,9 +621,6 @@ public class FrameMethods extends javax.swing.JFrame {
                 headingTemp = doc.createElement("HEADING");
                 headingTemp2 = doc.createElement("HEADING");
                 italicTemp = doc.createElement("ITALIC");
-                attr.setValue(tempNotes);                 
-                Element contrib = (Element)doc.getElementsByTagName("CONFLICT_OF_INTEREST").item(0);
-                contrib.setAttributeNode(attr);
             }
 
 
@@ -814,7 +704,7 @@ public class FrameMethods extends javax.swing.JFrame {
                 }
                
         
-       //        System.out.println("This is tag: "+tag.toString() + " "+m +" sub: "+arAllText[m].trim().substring(0,2));
+               System.out.println("This is tag: "+tag.toString() + " "+m +" sub: "+arAllText[m].trim().substring(0,2));
   
             
             if (arAllText[m].trim().length()>3&&arAllText[m].trim().substring(0,3).equalsIgnoreCase("RT:"))
@@ -1083,12 +973,11 @@ public class FrameMethods extends javax.swing.JFrame {
               else  if(arAllText[m].trim().substring(0, 2).equals("PP"))
                 {   
                     if(noChild == true)
-                    {      
-                        System.out.println(tag.toString());
+                    {                     
                     Element para = doc.createElement("P");
                     para.appendChild(doc.createTextNode(arAllText[m].substring(3,arAllText[m].length())));
                     tag.appendChild(para);
-                       // ERROR MESSAGE!! 
+                    
                     paragraphTemp = para;
                     noChild = false;
                     }
@@ -1484,22 +1373,20 @@ public class FrameMethods extends javax.swing.JFrame {
                  
                  cleaner.deleteSpecialChars(filepath);
                  
-                JOptionPane.showMessageDialog(this, "The text was added successfully to your RevMan File","Clue", JOptionPane.WARNING_MESSAGE);  
-                 
              } 
              catch (Exception e) 
              {
-                 JOptionPane.showMessageDialog(this, "Error in adding the text: "+e.toString(),"ERROR", JOptionPane.ERROR_MESSAGE);  
+                 
              }
            
            
             
             
-             btnAdd.setEnabled(false);
             
-        }
+            
+
         
-       
+
     }//GEN-LAST:event_btnAddMouseClicked
 
     private void btnOpenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOpenMouseClicked
@@ -1515,11 +1402,6 @@ public class FrameMethods extends javax.swing.JFrame {
         try {
             openTXT2.open(openTXT);
         } catch (Exception e) {
-            final JOptionPane pane = new JOptionPane("Error in opening the .txt file! Error message: "+e.toString());
-             final JDialog d = pane.createDialog(null, "ERROR");
-             d.setLocation(450, 430);
-             d.setVisible(true);
-            
         }
 
      
@@ -1534,13 +1416,6 @@ public class FrameMethods extends javax.swing.JFrame {
    
     }//GEN-LAST:event_btnRefreshMouseClicked
 
-    private void btn_exit1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_exit1MouseClicked
-             int resultBeenden = JOptionPane.showConfirmDialog(this, "Do you really want to end the program?", "EXIT", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if (resultBeenden==JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }
-    }//GEN-LAST:event_btn_exit1MouseClicked
-
     public void run()
     {
      
@@ -1553,9 +1428,9 @@ public class FrameMethods extends javax.swing.JFrame {
                     pathTXT = System.getProperty("user.dir");
                                       
 
-                   pathTXT = pathTXT  +"\\Methods.txt";  //for final version!!!!
+                  //  pathCSV = pathCSV +"\\drugDataNewCSVWithSpace.csv";  //for final version!!!!
                     
-                //    pathTXT = pathTXT +"\\src\\revmanhalcochranemode\\MethodsText.txt"; 
+                    pathTXT = pathTXT +"\\src\\revmanhalcochranemode\\MethodsText.txt"; 
                     
                     System.out.println("das ist pfad "+pathTXT);
                      Reader fr = new InputStreamReader(new FileInputStream(pathTXT), "UTF-8");
@@ -1582,10 +1457,7 @@ public class FrameMethods extends javax.swing.JFrame {
         
         catch(Exception e)
         {
-            final JOptionPane pane = new JOptionPane("Error in reading the .txt file! Error message: "+e.toString());
-             final JDialog d = pane.createDialog(null, "ERROR");
-             d.setLocation(450, 430);
-             d.setVisible(true);
+            e.printStackTrace();
         }
     
     }
@@ -1610,28 +1482,12 @@ public class FrameMethods extends javax.swing.JFrame {
         FileChannel outChannel = new FileOutputStream(out).getChannel();
         inChannel.transferTo(0, inChannel.size(), outChannel);
     }
-      protected void processWindowEvent(WindowEvent e)             // for pressing the "x" in the top right corner
- {
-        if(e.getID()==WindowEvent.WINDOW_CLOSING)
-  {
-
-  if(JOptionPane.showConfirmDialog(null, "<html><body>Do you really want to close the program?<body><html>"   
-     , "WARNING",
-     JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
-   {
-    super.processWindowEvent(e);
-                                System.exit(0);
-                        }
-                }
-    }
-    
    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnOpen;
     private javax.swing.JButton btnRefresh;
-    private javax.swing.JButton btn_exit1;
     private javax.swing.JButton btn_return;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

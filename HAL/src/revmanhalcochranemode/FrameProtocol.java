@@ -4,10 +4,6 @@
  */
 package revmanhalcochranemode;
 
-import java.awt.Color;
-import java.awt.event.WindowEvent;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -25,10 +21,7 @@ public class FrameProtocol extends javax.swing.JFrame {
     {
         path=p;
         initComponents();
-        this.setLocation(350, 150);
-        jPanel1.setBackground(new Color(226,226,226));
-        this.setBackground(new Color(226,226,226));
-        this.setTitle("RevMan Hal - Protocol");
+        this.setLocation(250, 250);
     }
 
     /**
@@ -41,6 +34,7 @@ public class FrameProtocol extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         cbMethods = new javax.swing.JCheckBox();
         btn_main = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -49,16 +43,18 @@ public class FrameProtocol extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         cbBackground = new javax.swing.JCheckBox();
-        cbBackup = new javax.swing.JCheckBox();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setText("Auto-Enter Text");
 
         cbMethods.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cbMethods.setLabel("Methods");
 
         btn_main.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btn_main.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/back.png"))); // NOI18N
-        btn_main.setText("BACK");
+        btn_main.setText("Back");
         btn_main.setActionCommand("");
         btn_main.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -68,100 +64,98 @@ public class FrameProtocol extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/hal.png"))); // NOI18N
 
-        btn_go.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btn_go.setIcon(new javax.swing.ImageIcon(getClass().getResource("/revmanhalcochranemode/start.png"))); // NOI18N
-        btn_go.setText(" GO!");
+        btn_go.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_go.setText("GO!");
         btn_go.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_goMouseClicked(evt);
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 28)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel4.setText("Protocol");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 3, 33)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 102, 249));
         jLabel5.setText("RevMan HAL ");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("<html><body>Here you can decide which part of the RevMan file shall be inserted through RevMan HAL: either the background or the methods. You can also check both possibilities.<p><p> <b>Please note:</b> for this function the RevMan file has to be in the PROTOCOL STAGE!</body></html>");
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setText("<html><body>Here you can decide which part of the RevMan file should be written through RevMan HAL. You can also check both possibilities.</body></html>");
 
         cbBackground.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cbBackground.setText("Background");
-
-        cbBackup.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cbBackup.setText("Backup");
-        cbBackup.setToolTipText("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn_main, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btn_main, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cbMethods)
                             .addComponent(cbBackground))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_go, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(119, 119, 119))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_go, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbBackup))
-                        .addGap(114, 114, 114))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2))
+                .addGap(72, 72, 72)
+                .addComponent(jLabel1)
+                .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_go, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(btn_go, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cbBackup)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
                         .addComponent(cbBackground)
-                        .addGap(16, 16, 16)
-                        .addComponent(cbMethods)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                        .addComponent(btn_main, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53))))
+                        .addGap(18, 18, 18)
+                        .addComponent(cbMethods)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addComponent(btn_main)
+                .addGap(31, 31, 31))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -169,15 +163,7 @@ public class FrameProtocol extends javax.swing.JFrame {
 
     private void btn_goMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_goMouseClicked
         
-        if(!cbBackground.isSelected()&&!cbMethods.isSelected())
-        {
-             final JOptionPane pane = new JOptionPane("Please select at least one checkbox.");
-             final JDialog d = pane.createDialog(null, "ERROR");
-             d.setLocation(450, 430);
-             d.setVisible(true);
-        }
-        
-        else if(cbBackground.isSelected()&&!cbMethods.isSelected())
+        if(cbBackground.isSelected()&&!cbMethods.isSelected())
         {
             FrameBackground start = new FrameBackground(path,false);
             start.setVisible(true);
@@ -201,39 +187,18 @@ public class FrameProtocol extends javax.swing.JFrame {
             this.dispose();
         }
         
-        if(cbBackup.isSelected())
-        {
-            Backup b = new Backup(path,"Protocol");
-            b.main();
-        }
-        
     }//GEN-LAST:event_btn_goMouseClicked
 
     private void btn_mainMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_mainMouseClicked
        
         
             this.dispose();
-            FrameStart start = new FrameStart(path, null);
+            FrameStart start = new FrameStart();
             start.setVisible(true);
             start.validate();
         
     }//GEN-LAST:event_btn_mainMouseClicked
 
-      protected void processWindowEvent(WindowEvent e)             // for pressing the "x" in the top right corner
- {
-        if(e.getID()==WindowEvent.WINDOW_CLOSING)
-  {
-
-  if(JOptionPane.showConfirmDialog(null, "<html><body>Do you really want to close the program?<body><html>"   
-     , "WARNING",
-     JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
-   {
-    super.processWindowEvent(e);
-                                System.exit(0);
-                        }
-                }
-    }
-    
     /**
      * @param args the command line arguments
      */
@@ -242,8 +207,8 @@ public class FrameProtocol extends javax.swing.JFrame {
     private javax.swing.JButton btn_go;
     private javax.swing.JButton btn_main;
     private javax.swing.JCheckBox cbBackground;
-    private javax.swing.JCheckBox cbBackup;
     private javax.swing.JCheckBox cbMethods;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
